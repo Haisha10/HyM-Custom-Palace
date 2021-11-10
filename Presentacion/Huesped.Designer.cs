@@ -1,0 +1,608 @@
+﻿
+namespace Presentacion
+{
+    partial class Huesped
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.label1 = new System.Windows.Forms.Label();
+            this.gbCliente = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.rbnClienteMascotaNo = new System.Windows.Forms.RadioButton();
+            this.rbnClienteMascotaSi = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbxClienteCorreo = new System.Windows.Forms.TextBox();
+            this.tbxClienteTelefono = new System.Windows.Forms.TextBox();
+            this.tbxClienteDni = new System.Windows.Forms.TextBox();
+            this.tbxClienteNombre = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.gbMascota = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbxMascotaTipo = new System.Windows.Forms.TextBox();
+            this.tbxMascotaNombre = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbxClienteApellido = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.btnReestablecerContrasena = new System.Windows.Forms.Button();
+            this.btnIniciarSesion = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.tbxMascotaEdad = new System.Windows.Forms.TextBox();
+            this.gbCliente.SuspendLayout();
+            this.gbMascota.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nombre:";
+            // 
+            // gbCliente
+            // 
+            this.gbCliente.BackColor = System.Drawing.Color.Transparent;
+            this.gbCliente.Controls.Add(this.label16);
+            this.gbCliente.Controls.Add(this.rbnClienteMascotaNo);
+            this.gbCliente.Controls.Add(this.rbnClienteMascotaSi);
+            this.gbCliente.Controls.Add(this.label3);
+            this.gbCliente.Controls.Add(this.tbxClienteCorreo);
+            this.gbCliente.Controls.Add(this.tbxClienteTelefono);
+            this.gbCliente.Controls.Add(this.tbxClienteDni);
+            this.gbCliente.Controls.Add(this.tbxClienteApellido);
+            this.gbCliente.Controls.Add(this.tbxClienteNombre);
+            this.gbCliente.Controls.Add(this.label4);
+            this.gbCliente.Controls.Add(this.label2);
+            this.gbCliente.Controls.Add(this.label5);
+            this.gbCliente.Controls.Add(this.label1);
+            this.gbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbCliente.ForeColor = System.Drawing.Color.White;
+            this.gbCliente.Location = new System.Drawing.Point(12, 101);
+            this.gbCliente.Name = "gbCliente";
+            this.gbCliente.Size = new System.Drawing.Size(226, 197);
+            this.gbCliente.TabIndex = 2;
+            this.gbCliente.TabStop = false;
+            this.gbCliente.Text = "Cliente";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(7, 163);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(63, 16);
+            this.label16.TabIndex = 12;
+            this.label16.Text = "Mascota:";
+            // 
+            // rbnClienteMascotaNo
+            // 
+            this.rbnClienteMascotaNo.AutoSize = true;
+            this.rbnClienteMascotaNo.Location = new System.Drawing.Point(154, 163);
+            this.rbnClienteMascotaNo.Name = "rbnClienteMascotaNo";
+            this.rbnClienteMascotaNo.Size = new System.Drawing.Size(44, 20);
+            this.rbnClienteMascotaNo.TabIndex = 7;
+            this.rbnClienteMascotaNo.TabStop = true;
+            this.rbnClienteMascotaNo.Text = "No";
+            this.rbnClienteMascotaNo.UseVisualStyleBackColor = true;
+            // 
+            // rbnClienteMascotaSi
+            // 
+            this.rbnClienteMascotaSi.AutoSize = true;
+            this.rbnClienteMascotaSi.Location = new System.Drawing.Point(93, 163);
+            this.rbnClienteMascotaSi.Name = "rbnClienteMascotaSi";
+            this.rbnClienteMascotaSi.Size = new System.Drawing.Size(38, 20);
+            this.rbnClienteMascotaSi.TabIndex = 6;
+            this.rbnClienteMascotaSi.TabStop = true;
+            this.rbnClienteMascotaSi.Text = "Sí";
+            this.rbnClienteMascotaSi.UseVisualStyleBackColor = true;
+            this.rbnClienteMascotaSi.CheckedChanged += new System.EventHandler(this.rbnClienteMascotaSi_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 113);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 16);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Telefono:";
+            // 
+            // tbxClienteCorreo
+            // 
+            this.tbxClienteCorreo.Location = new System.Drawing.Point(111, 135);
+            this.tbxClienteCorreo.Name = "tbxClienteCorreo";
+            this.tbxClienteCorreo.Size = new System.Drawing.Size(100, 22);
+            this.tbxClienteCorreo.TabIndex = 5;
+            // 
+            // tbxClienteTelefono
+            // 
+            this.tbxClienteTelefono.Location = new System.Drawing.Point(111, 110);
+            this.tbxClienteTelefono.Name = "tbxClienteTelefono";
+            this.tbxClienteTelefono.Size = new System.Drawing.Size(100, 22);
+            this.tbxClienteTelefono.TabIndex = 4;
+            // 
+            // tbxClienteDni
+            // 
+            this.tbxClienteDni.Location = new System.Drawing.Point(111, 85);
+            this.tbxClienteDni.Name = "tbxClienteDni";
+            this.tbxClienteDni.Size = new System.Drawing.Size(100, 22);
+            this.tbxClienteDni.TabIndex = 3;
+            // 
+            // tbxClienteNombre
+            // 
+            this.tbxClienteNombre.Location = new System.Drawing.Point(111, 34);
+            this.tbxClienteNombre.Name = "tbxClienteNombre";
+            this.tbxClienteNombre.Size = new System.Drawing.Size(100, 22);
+            this.tbxClienteNombre.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 138);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 16);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Correo:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "DNI:";
+            // 
+            // gbMascota
+            // 
+            this.gbMascota.BackColor = System.Drawing.Color.Transparent;
+            this.gbMascota.Controls.Add(this.label6);
+            this.gbMascota.Controls.Add(this.tbxMascotaEdad);
+            this.gbMascota.Controls.Add(this.tbxMascotaTipo);
+            this.gbMascota.Controls.Add(this.tbxMascotaNombre);
+            this.gbMascota.Controls.Add(this.label7);
+            this.gbMascota.Controls.Add(this.label8);
+            this.gbMascota.Controls.Add(this.label9);
+            this.gbMascota.Controls.Add(this.label10);
+            this.gbMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbMascota.ForeColor = System.Drawing.Color.White;
+            this.gbMascota.Location = new System.Drawing.Point(12, 304);
+            this.gbMascota.Name = "gbMascota";
+            this.gbMascota.Size = new System.Drawing.Size(226, 126);
+            this.gbMascota.TabIndex = 10;
+            this.gbMascota.TabStop = false;
+            this.gbMascota.Text = "Mascota";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 94);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(96, 16);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Edad (meses):";
+            // 
+            // tbxMascotaTipo
+            // 
+            this.tbxMascotaTipo.Location = new System.Drawing.Point(104, 64);
+            this.tbxMascotaTipo.Name = "tbxMascotaTipo";
+            this.tbxMascotaTipo.Size = new System.Drawing.Size(108, 22);
+            this.tbxMascotaTipo.TabIndex = 9;
+            // 
+            // tbxMascotaNombre
+            // 
+            this.tbxMascotaNombre.Location = new System.Drawing.Point(104, 34);
+            this.tbxMascotaNombre.Name = "tbxMascotaNombre";
+            this.tbxMascotaNombre.Size = new System.Drawing.Size(108, 22);
+            this.tbxMascotaNombre.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 153);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 16);
+            this.label7.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 123);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 16);
+            this.label8.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(8, 68);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 16);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Tipo:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(8, 37);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 16);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Nombre:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.label21);
+            this.groupBox3.Controls.Add(this.label20);
+            this.groupBox3.Controls.Add(this.textBox11);
+            this.groupBox3.Controls.Add(this.textBox10);
+            this.groupBox3.Controls.Add(this.textBox12);
+            this.groupBox3.Controls.Add(this.textBox9);
+            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.radioButton3);
+            this.groupBox3.Controls.Add(this.radioButton4);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(245, 101);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(255, 246);
+            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Servicio";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(150, 150);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(15, 16);
+            this.label21.TabIndex = 17;
+            this.label21.Text = "0";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(178, 150);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(37, 16);
+            this.label20.TabIndex = 10;
+            this.label20.Text = "USD";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(9, 150);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(50, 16);
+            this.label19.TabIndex = 16;
+            this.label19.Text = "Precio:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(9, 123);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(59, 16);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Paquete";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(9, 66);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(39, 16);
+            this.label17.TabIndex = 15;
+            this.label17.Text = "Tipo:";
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(143, 62);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(113, 20);
+            this.radioButton3.TabIndex = 14;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Personalizado";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(66, 62);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(71, 20);
+            this.radioButton4.TabIndex = 13;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Clásico";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(9, 95);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(68, 16);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Temática:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 16);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Apellido:";
+            // 
+            // tbxClienteApellido
+            // 
+            this.tbxClienteApellido.Location = new System.Drawing.Point(111, 59);
+            this.tbxClienteApellido.Name = "tbxClienteApellido";
+            this.tbxClienteApellido.Size = new System.Drawing.Size(100, 22);
+            this.tbxClienteApellido.TabIndex = 2;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(9, 37);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 16);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Numero:";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(119, 35);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(108, 22);
+            this.textBox6.TabIndex = 5;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(9, 177);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(97, 16);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Fecha Ingreso:";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(119, 172);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(108, 22);
+            this.textBox9.TabIndex = 5;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(119, 120);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(108, 22);
+            this.textBox10.TabIndex = 5;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(119, 92);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(108, 22);
+            this.textBox11.TabIndex = 5;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(9, 206);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(91, 16);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Fecha Salida:";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(119, 201);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(108, 22);
+            this.textBox12.TabIndex = 5;
+            // 
+            // btnReestablecerContrasena
+            // 
+            this.btnReestablecerContrasena.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnReestablecerContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReestablecerContrasena.ForeColor = System.Drawing.Color.White;
+            this.btnReestablecerContrasena.Location = new System.Drawing.Point(296, 394);
+            this.btnReestablecerContrasena.Name = "btnReestablecerContrasena";
+            this.btnReestablecerContrasena.Size = new System.Drawing.Size(114, 32);
+            this.btnReestablecerContrasena.TabIndex = 4;
+            this.btnReestablecerContrasena.Text = "Limpiar";
+            this.btnReestablecerContrasena.UseVisualStyleBackColor = false;
+            this.btnReestablecerContrasena.Click += new System.EventHandler(this.btnReestablecerContrasena_Click);
+            // 
+            // btnIniciarSesion
+            // 
+            this.btnIniciarSesion.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnIniciarSesion.FlatAppearance.BorderSize = 0;
+            this.btnIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciarSesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnIniciarSesion.Location = new System.Drawing.Point(296, 356);
+            this.btnIniciarSesion.Name = "btnIniciarSesion";
+            this.btnIniciarSesion.Size = new System.Drawing.Size(114, 32);
+            this.btnIniciarSesion.TabIndex = 3;
+            this.btnIniciarSesion.Text = "Registrar";
+            this.btnIniciarSesion.UseVisualStyleBackColor = false;
+            this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(518, 111);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(266, 236);
+            this.dataGridView1.TabIndex = 11;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(658, 372);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 32);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnReestablecerContrasena_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(528, 372);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(114, 32);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Modificar";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btnIniciarSesion_Click);
+            // 
+            // tbxMascotaEdad
+            // 
+            this.tbxMascotaEdad.Location = new System.Drawing.Point(104, 93);
+            this.tbxMascotaEdad.Name = "tbxMascotaEdad";
+            this.tbxMascotaEdad.Size = new System.Drawing.Size(108, 22);
+            this.tbxMascotaEdad.TabIndex = 10;
+            // 
+            // Huesped
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(796, 449);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gbMascota);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.gbCliente);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnIniciarSesion);
+            this.Controls.Add(this.btnReestablecerContrasena);
+            this.Name = "Huesped";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Recepcion";
+            this.gbCliente.ResumeLayout(false);
+            this.gbCliente.PerformLayout();
+            this.gbMascota.ResumeLayout(false);
+            this.gbMascota.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox gbCliente;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.RadioButton rbnClienteMascotaNo;
+        private System.Windows.Forms.RadioButton rbnClienteMascotaSi;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbxClienteCorreo;
+        private System.Windows.Forms.TextBox tbxClienteTelefono;
+        private System.Windows.Forms.TextBox tbxClienteDni;
+        private System.Windows.Forms.TextBox tbxClienteNombre;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox gbMascota;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbxMascotaTipo;
+        private System.Windows.Forms.TextBox tbxMascotaNombre;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.TextBox tbxClienteApellido;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnReestablecerContrasena;
+        private System.Windows.Forms.Button btnIniciarSesion;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox tbxMascotaEdad;
+    }
+}
