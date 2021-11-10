@@ -38,11 +38,14 @@ namespace Presentacion
             this.tbxClienteCorreo = new System.Windows.Forms.TextBox();
             this.tbxClienteTelefono = new System.Windows.Forms.TextBox();
             this.tbxClienteDni = new System.Windows.Forms.TextBox();
+            this.tbxClienteApellido = new System.Windows.Forms.TextBox();
             this.tbxClienteNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.gbMascota = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.tbxMascotaEdad = new System.Windows.Forms.TextBox();
             this.tbxMascotaTipo = new System.Windows.Forms.TextBox();
             this.tbxMascotaNombre = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -50,30 +53,27 @@ namespace Presentacion
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label21 = new System.Windows.Forms.Label();
+            this.lblServicioPrecio = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.tbxServicioTematica = new System.Windows.Forms.TextBox();
+            this.tbxServicioSalida = new System.Windows.Forms.TextBox();
+            this.tbxServicioIngreso = new System.Windows.Forms.TextBox();
+            this.tbxServicioNumero = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbxClienteApellido = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.rbnServicioTipoPersonalizado = new System.Windows.Forms.RadioButton();
+            this.rbnServicioTipoClasico = new System.Windows.Forms.RadioButton();
+            this.label14 = new System.Windows.Forms.Label();
             this.btnReestablecerContrasena = new System.Windows.Forms.Button();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.tbxMascotaEdad = new System.Windows.Forms.TextBox();
+            this.cbxServicioPaquete = new System.Windows.Forms.ComboBox();
             this.gbCliente.SuspendLayout();
             this.gbMascota.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -176,6 +176,13 @@ namespace Presentacion
             this.tbxClienteDni.Size = new System.Drawing.Size(100, 22);
             this.tbxClienteDni.TabIndex = 3;
             // 
+            // tbxClienteApellido
+            // 
+            this.tbxClienteApellido.Location = new System.Drawing.Point(111, 59);
+            this.tbxClienteApellido.Name = "tbxClienteApellido";
+            this.tbxClienteApellido.Size = new System.Drawing.Size(100, 22);
+            this.tbxClienteApellido.TabIndex = 2;
+            // 
             // tbxClienteNombre
             // 
             this.tbxClienteNombre.Location = new System.Drawing.Point(111, 34);
@@ -200,6 +207,15 @@ namespace Presentacion
             this.label2.Size = new System.Drawing.Size(34, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "DNI:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 16);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Apellido:";
             // 
             // gbMascota
             // 
@@ -229,6 +245,13 @@ namespace Presentacion
             this.label6.Size = new System.Drawing.Size(96, 16);
             this.label6.TabIndex = 2;
             this.label6.Text = "Edad (meses):";
+            // 
+            // tbxMascotaEdad
+            // 
+            this.tbxMascotaEdad.Location = new System.Drawing.Point(104, 93);
+            this.tbxMascotaEdad.Name = "tbxMascotaEdad";
+            this.tbxMascotaEdad.Size = new System.Drawing.Size(108, 22);
+            this.tbxMascotaEdad.TabIndex = 10;
             // 
             // tbxMascotaTipo
             // 
@@ -281,21 +304,21 @@ namespace Presentacion
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Controls.Add(this.label21);
+            this.groupBox3.Controls.Add(this.cbxServicioPaquete);
+            this.groupBox3.Controls.Add(this.lblServicioPrecio);
             this.groupBox3.Controls.Add(this.label20);
-            this.groupBox3.Controls.Add(this.textBox11);
-            this.groupBox3.Controls.Add(this.textBox10);
-            this.groupBox3.Controls.Add(this.textBox12);
-            this.groupBox3.Controls.Add(this.textBox9);
-            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.tbxServicioTematica);
+            this.groupBox3.Controls.Add(this.tbxServicioSalida);
+            this.groupBox3.Controls.Add(this.tbxServicioIngreso);
+            this.groupBox3.Controls.Add(this.tbxServicioNumero);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.radioButton3);
-            this.groupBox3.Controls.Add(this.radioButton4);
+            this.groupBox3.Controls.Add(this.rbnServicioTipoPersonalizado);
+            this.groupBox3.Controls.Add(this.rbnServicioTipoClasico);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
@@ -306,14 +329,14 @@ namespace Presentacion
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Servicio";
             // 
-            // label21
+            // lblServicioPrecio
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(150, 150);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(15, 16);
-            this.label21.TabIndex = 17;
-            this.label21.Text = "0";
+            this.lblServicioPrecio.AutoSize = true;
+            this.lblServicioPrecio.Location = new System.Drawing.Point(150, 150);
+            this.lblServicioPrecio.Name = "lblServicioPrecio";
+            this.lblServicioPrecio.Size = new System.Drawing.Size(15, 16);
+            this.lblServicioPrecio.TabIndex = 17;
+            this.lblServicioPrecio.Text = "0";
             // 
             // label20
             // 
@@ -323,6 +346,34 @@ namespace Presentacion
             this.label20.Size = new System.Drawing.Size(37, 16);
             this.label20.TabIndex = 10;
             this.label20.Text = "USD";
+            // 
+            // tbxServicioTematica
+            // 
+            this.tbxServicioTematica.Location = new System.Drawing.Point(119, 92);
+            this.tbxServicioTematica.Name = "tbxServicioTematica";
+            this.tbxServicioTematica.Size = new System.Drawing.Size(108, 22);
+            this.tbxServicioTematica.TabIndex = 5;
+            // 
+            // tbxServicioSalida
+            // 
+            this.tbxServicioSalida.Location = new System.Drawing.Point(119, 201);
+            this.tbxServicioSalida.Name = "tbxServicioSalida";
+            this.tbxServicioSalida.Size = new System.Drawing.Size(108, 22);
+            this.tbxServicioSalida.TabIndex = 5;
+            // 
+            // tbxServicioIngreso
+            // 
+            this.tbxServicioIngreso.Location = new System.Drawing.Point(119, 172);
+            this.tbxServicioIngreso.Name = "tbxServicioIngreso";
+            this.tbxServicioIngreso.Size = new System.Drawing.Size(108, 22);
+            this.tbxServicioIngreso.TabIndex = 5;
+            // 
+            // tbxServicioNumero
+            // 
+            this.tbxServicioNumero.Location = new System.Drawing.Point(119, 35);
+            this.tbxServicioNumero.Name = "tbxServicioNumero";
+            this.tbxServicioNumero.Size = new System.Drawing.Size(108, 22);
+            this.tbxServicioNumero.TabIndex = 5;
             // 
             // label19
             // 
@@ -351,68 +402,14 @@ namespace Presentacion
             this.label17.TabIndex = 15;
             this.label17.Text = "Tipo:";
             // 
-            // radioButton3
+            // label13
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(143, 62);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(113, 20);
-            this.radioButton3.TabIndex = 14;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Personalizado";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(66, 62);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(71, 20);
-            this.radioButton4.TabIndex = 13;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Clásico";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(9, 95);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(68, 16);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Temática:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 62);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 16);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Apellido:";
-            // 
-            // tbxClienteApellido
-            // 
-            this.tbxClienteApellido.Location = new System.Drawing.Point(111, 59);
-            this.tbxClienteApellido.Name = "tbxClienteApellido";
-            this.tbxClienteApellido.Size = new System.Drawing.Size(100, 22);
-            this.tbxClienteApellido.TabIndex = 2;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 37);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 16);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Numero:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(119, 35);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(108, 22);
-            this.textBox6.TabIndex = 5;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(9, 206);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(91, 16);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Fecha Salida:";
             // 
             // label12
             // 
@@ -423,42 +420,46 @@ namespace Presentacion
             this.label12.TabIndex = 0;
             this.label12.Text = "Fecha Ingreso:";
             // 
-            // textBox9
+            // label11
             // 
-            this.textBox9.Location = new System.Drawing.Point(119, 172);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(108, 22);
-            this.textBox9.TabIndex = 5;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(9, 37);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(96, 16);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Numero Pieza:";
             // 
-            // textBox10
+            // rbnServicioTipoPersonalizado
             // 
-            this.textBox10.Location = new System.Drawing.Point(119, 120);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(108, 22);
-            this.textBox10.TabIndex = 5;
+            this.rbnServicioTipoPersonalizado.AutoSize = true;
+            this.rbnServicioTipoPersonalizado.Location = new System.Drawing.Point(143, 62);
+            this.rbnServicioTipoPersonalizado.Name = "rbnServicioTipoPersonalizado";
+            this.rbnServicioTipoPersonalizado.Size = new System.Drawing.Size(113, 20);
+            this.rbnServicioTipoPersonalizado.TabIndex = 14;
+            this.rbnServicioTipoPersonalizado.TabStop = true;
+            this.rbnServicioTipoPersonalizado.Text = "Personalizado";
+            this.rbnServicioTipoPersonalizado.UseVisualStyleBackColor = true;
             // 
-            // textBox11
+            // rbnServicioTipoClasico
             // 
-            this.textBox11.Location = new System.Drawing.Point(119, 92);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(108, 22);
-            this.textBox11.TabIndex = 5;
+            this.rbnServicioTipoClasico.AutoSize = true;
+            this.rbnServicioTipoClasico.Location = new System.Drawing.Point(66, 62);
+            this.rbnServicioTipoClasico.Name = "rbnServicioTipoClasico";
+            this.rbnServicioTipoClasico.Size = new System.Drawing.Size(71, 20);
+            this.rbnServicioTipoClasico.TabIndex = 13;
+            this.rbnServicioTipoClasico.TabStop = true;
+            this.rbnServicioTipoClasico.Text = "Clásico";
+            this.rbnServicioTipoClasico.UseVisualStyleBackColor = true;
+            this.rbnServicioTipoClasico.CheckedChanged += new System.EventHandler(this.rbnServicioTipoClasico_CheckedChanged);
             // 
-            // label13
+            // label14
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(9, 206);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(91, 16);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Fecha Salida:";
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(119, 201);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(108, 22);
-            this.textBox12.TabIndex = 5;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(9, 95);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(68, 16);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Temática:";
             // 
             // btnReestablecerContrasena
             // 
@@ -522,12 +523,13 @@ namespace Presentacion
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
-            // tbxMascotaEdad
+            // cbxServicioPaquete
             // 
-            this.tbxMascotaEdad.Location = new System.Drawing.Point(104, 93);
-            this.tbxMascotaEdad.Name = "tbxMascotaEdad";
-            this.tbxMascotaEdad.Size = new System.Drawing.Size(108, 22);
-            this.tbxMascotaEdad.TabIndex = 10;
+            this.cbxServicioPaquete.FormattingEnabled = true;
+            this.cbxServicioPaquete.Location = new System.Drawing.Point(119, 120);
+            this.cbxServicioPaquete.Name = "cbxServicioPaquete";
+            this.cbxServicioPaquete.Size = new System.Drawing.Size(108, 24);
+            this.cbxServicioPaquete.TabIndex = 18;
             // 
             // Huesped
             // 
@@ -582,21 +584,20 @@ namespace Presentacion
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label lblServicioPrecio;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rbnServicioTipoPersonalizado;
+        private System.Windows.Forms.RadioButton rbnServicioTipoClasico;
         private System.Windows.Forms.TextBox tbxClienteApellido;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbxServicioIngreso;
+        private System.Windows.Forms.TextBox tbxServicioNumero;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox tbxServicioTematica;
+        private System.Windows.Forms.TextBox tbxServicioSalida;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnReestablecerContrasena;
         private System.Windows.Forms.Button btnIniciarSesion;
@@ -604,5 +605,6 @@ namespace Presentacion
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox tbxMascotaEdad;
+        private System.Windows.Forms.ComboBox cbxServicioPaquete;
     }
 }

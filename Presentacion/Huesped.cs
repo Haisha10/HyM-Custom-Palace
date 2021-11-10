@@ -43,5 +43,19 @@ namespace Presentacion
                 gbMascota.Enabled = false;
             }
         }
+
+        private void rbnServicioTipoClasico_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbnServicioTipoClasico.Checked == true)
+            {
+                tbxServicioTematica.Text = "Clasico";
+                tbxServicioTematica.Enabled = false;
+            }
+            else
+            {
+                tbxServicioTematica.Text = "";
+                tbxServicioTematica.Enabled = true;
+            }
+        }
     }
 }
