@@ -1,6 +1,0 @@
-C:\Users\Alvaro\source\repos\HyM Custom Palace\Entidades\bin\Debug\Entidades.dll
-C:\Users\Alvaro\source\repos\HyM Custom Palace\Entidades\bin\Debug\Entidades.pdb
-C:\Users\Alvaro\source\repos\HyM Custom Palace\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
-C:\Users\Alvaro\source\repos\HyM Custom Palace\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
-C:\Users\Alvaro\source\repos\HyM Custom Palace\Entidades\obj\Debug\Entidades.dll
-C:\Users\Alvaro\source\repos\HyM Custom Palace\Entidades\obj\Debug\Entidades.pdb
