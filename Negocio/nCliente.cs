@@ -17,7 +17,7 @@ namespace Negocio
         {
             clientedao = new dCliente();
         }
-        public void RegistrarCliente(string nombre, string apellido, long dni, string correo, long telefono)
+        public int RegistrarCliente(string nombre, string apellido, long dni, string correo, long telefono)
         {
             eCliente cliente = new eCliente()
             {
@@ -27,7 +27,7 @@ namespace Negocio
                 Correo = correo,
                 Telefono = telefono
             };
-            clientedao.Insertar(cliente);
+            return clientedao.Insertar(cliente);
         }
         public void ModificarCliente(int id, string nombre, string apellido, long dni, string correo, long telefono)
         {

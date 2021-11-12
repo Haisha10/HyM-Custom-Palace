@@ -15,7 +15,7 @@ namespace Negocio
         {
             serviciodao = new dServicio();
         }
-        public void RegistrarServicio(int numero_habitacion, string tipo_habitacion, string tematica, string paquete, double precio, DateTime fecha_ingreso, DateTime fecha_salida, DateTime fecha_facturacion, int id_cliente, int id_mascota)
+        public void RegistrarServicio(int numero_habitacion, string tipo_habitacion, string tematica, string paquete, double precio, DateTime fecha_ingreso, DateTime fecha_salida, DateTime fecha_facturacion, int id_cliente, int? id_mascota)
         {
             eServicio servicio = new eServicio()
             {

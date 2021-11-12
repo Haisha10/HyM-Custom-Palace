@@ -12,7 +12,7 @@ namespace Datos
     public class dMascota
     {
         Database db = new Database();
-        public void Insertar(eMascota o)
+        public int Insertar(eMascota o)
         {
             try
             {
@@ -23,12 +23,13 @@ namespace Datos
                 cmd.Parameters.AddWithValue("@nombre", o.Nombre);
                 cmd.Parameters.AddWithValue("@tipo", o.Tipo);
                 cmd.Parameters.AddWithValue("@edad", o.Edad);
-                cmd.ExecuteNonQuery();
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
                 cmd.Parameters.Clear();
+                return resultado;
             }
             catch (Exception ex)
             {
-                return;
+                return -1;
             }
             finally
             {

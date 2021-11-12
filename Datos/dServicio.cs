@@ -17,7 +17,7 @@ namespace Datos
             try
             {
                 SqlConnection con = db.ConectaDb();
-                string insert = "Insertar_Usuario";
+                string insert = "Insertar_Servicio";
                 SqlCommand cmd = new SqlCommand(insert, con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@numero_habitacion", o.Numero_habitacion);
@@ -29,7 +29,7 @@ namespace Datos
                 cmd.Parameters.AddWithValue("@fecha_salida", o.Fecha_salida);
                 cmd.Parameters.AddWithValue("@fecha_facturacion", o.Fecha_facturacion);
                 cmd.Parameters.AddWithValue("@id_cliente", o.Id_cliente);
-                cmd.Parameters.AddWithValue("@id_mascota", o.Id_mascota);
+                cmd.Parameters.AddWithValue("@id_mascota", o.Id_mascota ?? Convert.DBNull);
                 cmd.ExecuteNonQuery();
                 cmd.Parameters.Clear();
                 return "Insertado";

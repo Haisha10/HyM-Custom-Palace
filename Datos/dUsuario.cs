@@ -175,7 +175,6 @@ namespace Datos
         {
             try
             {
-                string resultado;
                 SqlConnection con = db.ConectaDb();
                 SqlCommand cmd = new SqlCommand("ReestablecerContrasena_Usuario", con);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -184,7 +183,7 @@ namespace Datos
                 cmd.Parameters.AddWithValue("@dni", dni);
                 cmd.Parameters.AddWithValue("@correo", correo);
                 cmd.Parameters.AddWithValue("@telefono", telefono);
-                resultado = cmd.ExecuteScalar().ToString();
+                string resultado = cmd.ExecuteScalar().ToString();
                 cmd.Parameters.Clear();
                 return resultado;
             }

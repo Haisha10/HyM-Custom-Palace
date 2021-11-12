@@ -12,7 +12,7 @@ namespace Datos
     public class dCliente
     {
         Database db = new Database();
-        public void Insertar(eCliente o)
+        public int Insertar(eCliente o)
         {
             try
             {
@@ -25,12 +25,13 @@ namespace Datos
                 cmd.Parameters.AddWithValue("@dni", o.Dni);
                 cmd.Parameters.AddWithValue("@correo", o.Correo);
                 cmd.Parameters.AddWithValue("@telefono", o.Telefono);
-                cmd.ExecuteNonQuery();
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
                 cmd.Parameters.Clear();
+                return resultado;
             }
             catch (Exception ex)
             {
-                return;
+                return -1;
             }
             finally
             {

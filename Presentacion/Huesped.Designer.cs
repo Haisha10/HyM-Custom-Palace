@@ -53,6 +53,7 @@ namespace Presentacion
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbxServicioPaquete = new System.Windows.Forms.ComboBox();
             this.lblServicioPrecio = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.tbxServicioTematica = new System.Windows.Forms.TextBox();
@@ -69,11 +70,10 @@ namespace Presentacion
             this.rbnServicioTipoClasico = new System.Windows.Forms.RadioButton();
             this.label14 = new System.Windows.Forms.Label();
             this.btnReestablecerContrasena = new System.Windows.Forms.Button();
-            this.btnIniciarSesion = new System.Windows.Forms.Button();
+            this.btnHuespedRegistrar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.cbxServicioPaquete = new System.Windows.Forms.ComboBox();
             this.gbCliente.SuspendLayout();
             this.gbMascota.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -329,6 +329,18 @@ namespace Presentacion
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Servicio";
             // 
+            // cbxServicioPaquete
+            // 
+            this.cbxServicioPaquete.FormattingEnabled = true;
+            this.cbxServicioPaquete.Items.AddRange(new object[] {
+            "Basico",
+            "Intermedio",
+            "Completo"});
+            this.cbxServicioPaquete.Location = new System.Drawing.Point(119, 120);
+            this.cbxServicioPaquete.Name = "cbxServicioPaquete";
+            this.cbxServicioPaquete.Size = new System.Drawing.Size(108, 24);
+            this.cbxServicioPaquete.TabIndex = 18;
+            // 
             // lblServicioPrecio
             // 
             this.lblServicioPrecio.AutoSize = true;
@@ -474,19 +486,19 @@ namespace Presentacion
             this.btnReestablecerContrasena.UseVisualStyleBackColor = false;
             this.btnReestablecerContrasena.Click += new System.EventHandler(this.btnReestablecerContrasena_Click);
             // 
-            // btnIniciarSesion
+            // btnHuespedRegistrar
             // 
-            this.btnIniciarSesion.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnIniciarSesion.FlatAppearance.BorderSize = 0;
-            this.btnIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciarSesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnIniciarSesion.Location = new System.Drawing.Point(296, 356);
-            this.btnIniciarSesion.Name = "btnIniciarSesion";
-            this.btnIniciarSesion.Size = new System.Drawing.Size(114, 32);
-            this.btnIniciarSesion.TabIndex = 3;
-            this.btnIniciarSesion.Text = "Registrar";
-            this.btnIniciarSesion.UseVisualStyleBackColor = false;
-            this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
+            this.btnHuespedRegistrar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnHuespedRegistrar.FlatAppearance.BorderSize = 0;
+            this.btnHuespedRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuespedRegistrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnHuespedRegistrar.Location = new System.Drawing.Point(296, 356);
+            this.btnHuespedRegistrar.Name = "btnHuespedRegistrar";
+            this.btnHuespedRegistrar.Size = new System.Drawing.Size(114, 32);
+            this.btnHuespedRegistrar.TabIndex = 3;
+            this.btnHuespedRegistrar.Text = "Registrar";
+            this.btnHuespedRegistrar.UseVisualStyleBackColor = false;
+            this.btnHuespedRegistrar.Click += new System.EventHandler(this.btnHuespedRegistrar_Click);
             // 
             // dataGridView1
             // 
@@ -523,14 +535,6 @@ namespace Presentacion
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
-            // cbxServicioPaquete
-            // 
-            this.cbxServicioPaquete.FormattingEnabled = true;
-            this.cbxServicioPaquete.Location = new System.Drawing.Point(119, 120);
-            this.cbxServicioPaquete.Name = "cbxServicioPaquete";
-            this.cbxServicioPaquete.Size = new System.Drawing.Size(108, 24);
-            this.cbxServicioPaquete.TabIndex = 18;
-            // 
             // Huesped
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -543,7 +547,7 @@ namespace Presentacion
             this.Controls.Add(this.gbCliente);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnIniciarSesion);
+            this.Controls.Add(this.btnHuespedRegistrar);
             this.Controls.Add(this.btnReestablecerContrasena);
             this.Name = "Huesped";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -600,7 +604,7 @@ namespace Presentacion
         private System.Windows.Forms.TextBox tbxServicioSalida;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnReestablecerContrasena;
-        private System.Windows.Forms.Button btnIniciarSesion;
+        private System.Windows.Forms.Button btnHuespedRegistrar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

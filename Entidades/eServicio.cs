@@ -18,6 +18,6 @@ namespace Entidades
         public DateTime Fecha_salida { get; set; }
         public DateTime Fecha_facturacion { get; set; }
         public int Id_cliente { get; set; }
-        public int Id_mascota { get; set; }
+        public int? Id_mascota { get; set; }
     }
 }

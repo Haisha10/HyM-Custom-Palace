@@ -8,14 +8,14 @@ using Datos;
 
 namespace Negocio
 {
-    class nMascota
+    public class nMascota
     {
         dMascota mascotadao;
         public nMascota()
         {
             mascotadao = new dMascota();
         }
-        public void RegistrarMascota(string nombre, string tipo, int edad)
+        public int RegistrarMascota(string nombre, string tipo, int edad)
         {
             eMascota mascota = new eMascota()
             {
@@ -23,7 +23,7 @@ namespace Negocio
                 Tipo = tipo,
                 Edad = edad
             };
-            mascotadao.Insertar(mascota);
+            return mascotadao.Insertar(mascota);
         }
         public void ModificarMascota(int id, string nombre, string tipo, int edad)
         {
