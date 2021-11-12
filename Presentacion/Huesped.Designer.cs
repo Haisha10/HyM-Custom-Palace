@@ -69,7 +69,7 @@ namespace Presentacion
             this.rbnServicioTipoPersonalizado = new System.Windows.Forms.RadioButton();
             this.rbnServicioTipoClasico = new System.Windows.Forms.RadioButton();
             this.label14 = new System.Windows.Forms.Label();
-            this.btnReestablecerContrasena = new System.Windows.Forms.Button();
+            this.btnHuespedLimpiar = new System.Windows.Forms.Button();
             this.btnHuespedRegistrar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -473,18 +473,18 @@ namespace Presentacion
             this.label14.TabIndex = 1;
             this.label14.Text = "Temática:";
             // 
-            // btnReestablecerContrasena
+            // btnHuespedLimpiar
             // 
-            this.btnReestablecerContrasena.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnReestablecerContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReestablecerContrasena.ForeColor = System.Drawing.Color.White;
-            this.btnReestablecerContrasena.Location = new System.Drawing.Point(296, 394);
-            this.btnReestablecerContrasena.Name = "btnReestablecerContrasena";
-            this.btnReestablecerContrasena.Size = new System.Drawing.Size(114, 32);
-            this.btnReestablecerContrasena.TabIndex = 4;
-            this.btnReestablecerContrasena.Text = "Limpiar";
-            this.btnReestablecerContrasena.UseVisualStyleBackColor = false;
-            this.btnReestablecerContrasena.Click += new System.EventHandler(this.btnReestablecerContrasena_Click);
+            this.btnHuespedLimpiar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnHuespedLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuespedLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnHuespedLimpiar.Location = new System.Drawing.Point(296, 394);
+            this.btnHuespedLimpiar.Name = "btnHuespedLimpiar";
+            this.btnHuespedLimpiar.Size = new System.Drawing.Size(114, 32);
+            this.btnHuespedLimpiar.TabIndex = 4;
+            this.btnHuespedLimpiar.Text = "Limpiar";
+            this.btnHuespedLimpiar.UseVisualStyleBackColor = false;
+            this.btnHuespedLimpiar.Click += new System.EventHandler(this.btnHuespedLimpiar_Click);
             // 
             // btnHuespedRegistrar
             // 
@@ -548,7 +548,7 @@ namespace Presentacion
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnHuespedRegistrar);
-            this.Controls.Add(this.btnReestablecerContrasena);
+            this.Controls.Add(this.btnHuespedLimpiar);
             this.Name = "Huesped";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recepcion";
@@ -603,7 +603,7 @@ namespace Presentacion
         private System.Windows.Forms.TextBox tbxServicioTematica;
         private System.Windows.Forms.TextBox tbxServicioSalida;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button btnReestablecerContrasena;
+        private System.Windows.Forms.Button btnHuespedLimpiar;
         private System.Windows.Forms.Button btnHuespedRegistrar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;

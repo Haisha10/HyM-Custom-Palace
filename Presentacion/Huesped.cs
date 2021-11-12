@@ -28,6 +28,21 @@ namespace Presentacion
             rbnServicioTipoClasico.Checked = true;
 
         }
+        private void LimpiarControles()
+        {
+            tbxClienteNombre.Clear();
+            tbxClienteApellido.Clear();
+            tbxClienteDni.Clear();
+            tbxClienteTelefono.Clear();
+            tbxClienteCorreo.Clear();
+            rbnClienteMascotaNo.Checked = true;
+            tbxServicioNumero.Clear();
+            rbnServicioTipoClasico.Checked = true;
+            tbxServicioTematica.Clear();
+            cbxServicioPaquete.SelectedIndex = -1;
+            tbxServicioIngreso.Clear();
+            tbxServicioSalida.Clear();
+        }
 
         private void btnReestablecerContrasena_Click(object sender, EventArgs e)
         {
@@ -94,12 +109,18 @@ namespace Presentacion
                     tipo = "Personalizado";
                 }
                 gServicio.RegistrarServicio(Convert.ToInt32(tbxServicioNumero.Text.Trim()), tipo, tbxServicioTematica.Text.Trim(), cbxServicioPaquete.SelectedItem.ToString(), Convert.ToDouble(lblServicioPrecio.Text), DateTime.Parse(tbxServicioIngreso.Text.Trim()), DateTime.Parse(tbxServicioSalida.Text.Trim()), DateTime.Now, id_cliente, id_mascota);
+                LimpiarControles();
                 MessageBox.Show("Registrado");
             }
             else
             {
                 MessageBox.Show("Rellene todos los campos.");
             }
+        }
+
+        private void btnHuespedLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarControles();
         }
     }
 }
