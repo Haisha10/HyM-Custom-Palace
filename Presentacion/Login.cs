@@ -43,7 +43,7 @@ namespace Presentacion
                 else if (ingreso.Estado == "Recepcionista") //Tiene privilegios de Recepcionista
                 {
                     Hide();
-                    using (Huesped frmHuesped = new Huesped())
+                    using (Huesped frmHuesped = new Huesped(ingreso.Nombre))
                         frmHuesped.ShowDialog();
                     Show();
                 }

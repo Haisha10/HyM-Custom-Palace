@@ -38,3 +38,4 @@ C:\Users\Alvaro\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\Presentaci
 C:\Users\Alvaro\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
 C:\Users\Alvaro\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\HyP Custom Palace.exe
 C:\Users\Alvaro\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\HyP Custom Palace.pdb
+C:\Users\Alvaro\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.Facturacion.resources

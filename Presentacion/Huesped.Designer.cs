@@ -340,11 +340,12 @@ namespace Presentacion
             this.cbxServicioPaquete.Name = "cbxServicioPaquete";
             this.cbxServicioPaquete.Size = new System.Drawing.Size(108, 24);
             this.cbxServicioPaquete.TabIndex = 18;
+            this.cbxServicioPaquete.SelectedIndexChanged += new System.EventHandler(this.cbxServicioPaquete_SelectedIndexChanged);
             // 
             // lblServicioPrecio
             // 
             this.lblServicioPrecio.AutoSize = true;
-            this.lblServicioPrecio.Location = new System.Drawing.Point(150, 150);
+            this.lblServicioPrecio.Location = new System.Drawing.Point(180, 150);
             this.lblServicioPrecio.Name = "lblServicioPrecio";
             this.lblServicioPrecio.Size = new System.Drawing.Size(15, 16);
             this.lblServicioPrecio.TabIndex = 17;
@@ -353,11 +354,11 @@ namespace Presentacion
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(178, 150);
+            this.label20.Location = new System.Drawing.Point(125, 150);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(37, 16);
+            this.label20.Size = new System.Drawing.Size(21, 16);
             this.label20.TabIndex = 10;
-            this.label20.Text = "USD";
+            this.label20.Text = "S/";
             // 
             // tbxServicioTematica
             // 
@@ -365,6 +366,7 @@ namespace Presentacion
             this.tbxServicioTematica.Name = "tbxServicioTematica";
             this.tbxServicioTematica.Size = new System.Drawing.Size(108, 22);
             this.tbxServicioTematica.TabIndex = 5;
+            this.tbxServicioTematica.Leave += new System.EventHandler(this.tbxServicioTematica_Leave);
             // 
             // tbxServicioSalida
             // 

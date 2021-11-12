@@ -17,7 +17,8 @@ namespace Presentacion
         nCliente gCliente = new nCliente();
         nMascota gMascota = new nMascota();
         nServicio gServicio = new nServicio();
-        public Huesped()
+        string nombreRecepcionista;
+        public Huesped(string nombre)
         {
             InitializeComponent();
             Bitmap img = new Bitmap(Application.StartupPath + @"\img\bck_huesped.png");
@@ -26,6 +27,7 @@ namespace Presentacion
             gbMascota.Enabled = false;
             rbnClienteMascotaNo.Checked = true;
             rbnServicioTipoClasico.Checked = true;
+            nombreRecepcionista = nombre;
 
         }
         private void LimpiarControles()
@@ -81,6 +83,29 @@ namespace Presentacion
                 tbxServicioTematica.Text = "";
                 tbxServicioTematica.Enabled = true;
             }
+
+            int precio = 0;
+            if (rbnServicioTipoClasico.Checked)
+            {
+                precio += 150;
+            }
+            else
+            {
+                precio += 250;
+            }
+            if (cbxServicioPaquete.SelectedIndex == 0)
+            {
+                precio += 100;
+            }
+            else if (cbxServicioPaquete.SelectedIndex == 1)
+            {
+                precio += 150;
+            }
+            else
+            {
+                precio += 200;
+            }
+            lblServicioPrecio.Text = string.Format("{0:0.00}", precio);
         }
 
         private void btnHuespedRegistrar_Click(object sender, EventArgs e)
@@ -108,9 +133,10 @@ namespace Presentacion
                 {
                     tipo = "Personalizado";
                 }
-                gServicio.RegistrarServicio(Convert.ToInt32(tbxServicioNumero.Text.Trim()), tipo, tbxServicioTematica.Text.Trim(), cbxServicioPaquete.SelectedItem.ToString(), Convert.ToDouble(lblServicioPrecio.Text), DateTime.Parse(tbxServicioIngreso.Text.Trim()), DateTime.Parse(tbxServicioSalida.Text.Trim()), DateTime.Now, id_cliente, id_mascota);
+                int id_servicio = gServicio.RegistrarServicio(Convert.ToInt32(tbxServicioNumero.Text.Trim()), tipo, tbxServicioTematica.Text.Trim(), cbxServicioPaquete.SelectedItem.ToString(), Convert.ToDouble(lblServicioPrecio.Text), DateTime.Parse(tbxServicioIngreso.Text.Trim()), DateTime.Parse(tbxServicioSalida.Text.Trim()), DateTime.Now, id_cliente, id_mascota);
+                using (Facturacion frmFacturacion = new Facturacion(id_servicio, nombreRecepcionista, DateTime.Now, tbxClienteNombre.Text + " " + tbxClienteApellido.Text, Convert.ToInt64(tbxClienteDni.Text), cbxServicioPaquete.SelectedItem.ToString(), tipo, tbxServicioTematica.Text, DateTime.Parse(tbxServicioIngreso.Text.Trim()), DateTime.Parse(tbxServicioSalida.Text.Trim()), Convert.ToDouble(lblServicioPrecio.Text)))
+                    frmFacturacion.ShowDialog();
                 LimpiarControles();
-                MessageBox.Show("Registrado");
             }
             else
             {
@@ -121,6 +147,57 @@ namespace Presentacion
         private void btnHuespedLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarControles();
+        }
+
+        private void cbxServicioPaquete_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int precio = 0;
+            if (rbnServicioTipoClasico.Checked)
+            {
+                precio += 150;
+            }
+            else
+            {
+                precio += 250;
+            }
+            if(cbxServicioPaquete.SelectedIndex == 0)
+            {
+                precio += 100;
+            }else if(cbxServicioPaquete.SelectedIndex == 1)
+            {
+                precio += 150;
+            }
+            else
+            {
+                precio += 200;
+            }
+            lblServicioPrecio.Text = string.Format("{0:0.00}", precio);
+        }
+
+        private void tbxServicioTematica_Leave(object sender, EventArgs e)
+        {
+            int precio = 0;
+            if (rbnServicioTipoClasico.Checked)
+            {
+                precio += 150;
+            }
+            else
+            {
+                precio += 250;
+            }
+            if (cbxServicioPaquete.SelectedIndex == 0)
+            {
+                precio += 100;
+            }
+            else if (cbxServicioPaquete.SelectedIndex == 1)
+            {
+                precio += 150;
+            }
+            else
+            {
+                precio += 200;
+            }
+            lblServicioPrecio.Text = string.Format("{0:0.00}", precio);
         }
     }
 }

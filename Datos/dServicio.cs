@@ -12,7 +12,7 @@ namespace Datos
     public class dServicio
     {
         Database db = new Database();
-        public string Insertar(eServicio o)
+        public int Insertar(eServicio o)
         {
             try
             {
@@ -30,13 +30,13 @@ namespace Datos
                 cmd.Parameters.AddWithValue("@fecha_facturacion", o.Fecha_facturacion);
                 cmd.Parameters.AddWithValue("@id_cliente", o.Id_cliente);
                 cmd.Parameters.AddWithValue("@id_mascota", o.Id_mascota ?? Convert.DBNull);
-                cmd.ExecuteNonQuery();
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
                 cmd.Parameters.Clear();
-                return "Insertado";
+                return resultado;
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                return -1;
             }
             finally
             {
