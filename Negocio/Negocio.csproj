@@ -45,6 +45,7 @@
     <Compile Include="nMascota.cs" />
     <Compile Include="nServicio.cs" />
     <Compile Include="nUsuario.cs" />
+    <Compile Include="nVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

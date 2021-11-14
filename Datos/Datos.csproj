@@ -46,6 +46,7 @@
     <Compile Include="dMascota.cs" />
     <Compile Include="dServicio.cs" />
     <Compile Include="dUsuario.cs" />
+    <Compile Include="dVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

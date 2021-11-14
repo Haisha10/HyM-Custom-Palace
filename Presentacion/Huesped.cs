@@ -15,8 +15,21 @@ namespace Presentacion
     public partial class Huesped : Form
     {
         nCliente gCliente = new nCliente();
+        eCliente clienteseleccionado = null;
+        int idCliente;
+
         nMascota gMascota = new nMascota();
+        eMascota mascotaseleccionado = null;
+        int? idMascota;
+
         nServicio gServicio = new nServicio();
+        eServicio servicioseleccionado = null;
+        int idServicio;
+
+        nVenta gVenta = new nVenta();
+        eVenta ventaseleccionado = null;
+        int idVenta;
+
         string nombreRecepcionista;
         public Huesped(string nombre)
         {
@@ -28,7 +41,13 @@ namespace Presentacion
             rbnClienteMascotaNo.Checked = true;
             rbnServicioTipoClasico.Checked = true;
             nombreRecepcionista = nombre;
-
+            btnHuespedModificar.Enabled = false;
+            btnHuespedEliminar.Enabled = false;
+            MostrarVentas();
+        }
+        private void MostrarVentas()
+        {
+            dgVenta.DataSource = gVenta.MostrarVentas();
         }
         private void LimpiarControles()
         {
@@ -44,16 +63,9 @@ namespace Presentacion
             cbxServicioPaquete.SelectedIndex = -1;
             tbxServicioIngreso.Clear();
             tbxServicioSalida.Clear();
-        }
-
-        private void btnReestablecerContrasena_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnIniciarSesion_Click(object sender, EventArgs e)
-        {
-
+            btnHuespedModificar.Enabled = false;
+            btnHuespedEliminar.Enabled = false;
+            btnHuespedImprimir.Enabled = false;
         }
 
         private void rbnClienteMascotaSi_CheckedChanged(object sender, EventArgs e)
@@ -137,6 +149,7 @@ namespace Presentacion
                 using (Facturacion frmFacturacion = new Facturacion(id_servicio, nombreRecepcionista, DateTime.Now, tbxClienteNombre.Text + " " + tbxClienteApellido.Text, Convert.ToInt64(tbxClienteDni.Text), cbxServicioPaquete.SelectedItem.ToString(), tipo, tbxServicioTematica.Text, DateTime.Parse(tbxServicioIngreso.Text.Trim()), DateTime.Parse(tbxServicioSalida.Text.Trim()), Convert.ToDouble(lblServicioPrecio.Text)))
                     frmFacturacion.ShowDialog();
                 LimpiarControles();
+                MostrarVentas();
             }
             else
             {
@@ -198,6 +211,72 @@ namespace Presentacion
                 precio += 200;
             }
             lblServicioPrecio.Text = string.Format("{0:0.00}", precio);
+        }
+
+        private void dgVenta_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex != -1)
+            {
+                ventaseleccionado = dgVenta.CurrentRow.DataBoundItem as eVenta;
+                if(ventaseleccionado != null)
+                {
+                    idCliente = ventaseleccionado.Id_cliente;
+                    tbxClienteNombre.Text = ventaseleccionado.Nombre_cliente;
+                    tbxClienteApellido.Text = ventaseleccionado.Apellido_cliente;
+                    tbxClienteDni.Text = ventaseleccionado.Dni_cliente.ToString();
+                    tbxClienteTelefono.Text = ventaseleccionado.Telefono_cliente.ToString();
+                    tbxClienteCorreo.Text = ventaseleccionado.Correo_cliente;
+
+                    idMascota = ventaseleccionado.Id_mascota;
+                    if (idMascota != null)
+                    {
+                        rbnClienteMascotaSi.Checked = true;
+                        tbxMascotaNombre.Text = ventaseleccionado.Nombre_mascota;
+                        tbxMascotaTipo.Text = ventaseleccionado.Tipo_mascota;
+                        tbxMascotaEdad.Text = ventaseleccionado.Edad_mascota.ToString();
+                    }
+                    else
+                    {
+                        rbnClienteMascotaNo.Checked = true;
+                    }
+
+                    idServicio = ventaseleccionado.Id_servicio;
+                    tbxServicioNumero.Text = ventaseleccionado.Numero_habitacion_servicio.ToString();
+                    if(ventaseleccionado.Tipo_habitacion_servicio == "Personalizado")
+                    {
+                        rbnServicioTipoPersonalizado.Checked = true;
+                        tbxServicioTematica.Text = ventaseleccionado.Tematica_servicio;
+                    }
+                    else
+                    {
+                        rbnServicioTipoClasico.Checked = true;
+                    }
+                    cbxServicioPaquete.SelectedIndex = cbxServicioPaquete.Items.IndexOf(ventaseleccionado.Paquete_servicio);
+                    lblServicioPrecio.Text = ventaseleccionado.Precio_servicio.ToString();
+                    tbxServicioIngreso.Text = ventaseleccionado.Fecha_ingreso_servicio.ToString();
+                    tbxServicioSalida.Text = ventaseleccionado.Fecha_salida_servicio.ToString();
+
+                    btnHuespedModificar.Enabled = true;
+                    btnHuespedEliminar.Enabled = true;
+                    btnHuespedImprimir.Enabled = true;
+                }
+            }
+        }
+
+        private void btnHuespedImprimir_Click(object sender, EventArgs e)
+        {
+            using (Facturacion frmFacturacion = new Facturacion(ventaseleccionado.Id_servicio, 
+                nombreRecepcionista,
+                ventaseleccionado.Fecha_facturacion_servicio, 
+                ventaseleccionado.Nombre_cliente + " " + ventaseleccionado.Apellido_cliente, 
+                ventaseleccionado.Dni_cliente, 
+                ventaseleccionado.Paquete_servicio, 
+                ventaseleccionado.Tipo_habitacion_servicio, 
+                ventaseleccionado.Tematica_servicio, 
+                ventaseleccionado.Fecha_ingreso_servicio, 
+                ventaseleccionado.Fecha_salida_servicio, 
+                ventaseleccionado.Precio_servicio))
+                frmFacturacion.ShowDialog();
         }
     }
 }

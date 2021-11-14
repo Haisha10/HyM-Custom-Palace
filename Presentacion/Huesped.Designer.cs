@@ -71,13 +71,15 @@ namespace Presentacion
             this.label14 = new System.Windows.Forms.Label();
             this.btnHuespedLimpiar = new System.Windows.Forms.Button();
             this.btnHuespedRegistrar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnHuespedEliminar = new System.Windows.Forms.Button();
+            this.btnHuespedModificar = new System.Windows.Forms.Button();
+            this.dgVenta = new System.Windows.Forms.DataGridView();
+            this.btnHuespedCerrar = new System.Windows.Forms.Button();
+            this.btnHuespedImprimir = new System.Windows.Forms.Button();
             this.gbCliente.SuspendLayout();
             this.gbMascota.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -502,40 +504,65 @@ namespace Presentacion
             this.btnHuespedRegistrar.UseVisualStyleBackColor = false;
             this.btnHuespedRegistrar.Click += new System.EventHandler(this.btnHuespedRegistrar_Click);
             // 
-            // dataGridView1
+            // btnHuespedEliminar
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(518, 111);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(266, 236);
-            this.dataGridView1.TabIndex = 11;
+            this.btnHuespedEliminar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnHuespedEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuespedEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnHuespedEliminar.Location = new System.Drawing.Point(663, 363);
+            this.btnHuespedEliminar.Name = "btnHuespedEliminar";
+            this.btnHuespedEliminar.Size = new System.Drawing.Size(114, 32);
+            this.btnHuespedEliminar.TabIndex = 4;
+            this.btnHuespedEliminar.Text = "Eliminar";
+            this.btnHuespedEliminar.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnHuespedModificar
             // 
-            this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(658, 372);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 32);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnReestablecerContrasena_Click);
+            this.btnHuespedModificar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnHuespedModificar.FlatAppearance.BorderSize = 0;
+            this.btnHuespedModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuespedModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnHuespedModificar.Location = new System.Drawing.Point(533, 363);
+            this.btnHuespedModificar.Name = "btnHuespedModificar";
+            this.btnHuespedModificar.Size = new System.Drawing.Size(114, 32);
+            this.btnHuespedModificar.TabIndex = 3;
+            this.btnHuespedModificar.Text = "Modificar";
+            this.btnHuespedModificar.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // dgVenta
             // 
-            this.button2.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(528, 372);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 32);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Modificar";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.btnIniciarSesion_Click);
+            this.dgVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgVenta.Location = new System.Drawing.Point(518, 108);
+            this.dgVenta.Name = "dgVenta";
+            this.dgVenta.Size = new System.Drawing.Size(266, 239);
+            this.dgVenta.TabIndex = 11;
+            this.dgVenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVenta_CellClick);
+            // 
+            // btnHuespedCerrar
+            // 
+            this.btnHuespedCerrar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnHuespedCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuespedCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnHuespedCerrar.Location = new System.Drawing.Point(663, 402);
+            this.btnHuespedCerrar.Name = "btnHuespedCerrar";
+            this.btnHuespedCerrar.Size = new System.Drawing.Size(114, 32);
+            this.btnHuespedCerrar.TabIndex = 4;
+            this.btnHuespedCerrar.Text = "Cerrar Sesión";
+            this.btnHuespedCerrar.UseVisualStyleBackColor = false;
+            // 
+            // btnHuespedImprimir
+            // 
+            this.btnHuespedImprimir.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnHuespedImprimir.FlatAppearance.BorderSize = 0;
+            this.btnHuespedImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuespedImprimir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnHuespedImprimir.Location = new System.Drawing.Point(533, 402);
+            this.btnHuespedImprimir.Name = "btnHuespedImprimir";
+            this.btnHuespedImprimir.Size = new System.Drawing.Size(114, 32);
+            this.btnHuespedImprimir.TabIndex = 3;
+            this.btnHuespedImprimir.Text = "Imprimir";
+            this.btnHuespedImprimir.UseVisualStyleBackColor = false;
+            this.btnHuespedImprimir.Click += new System.EventHandler(this.btnHuespedImprimir_Click);
             // 
             // Huesped
             // 
@@ -543,12 +570,14 @@ namespace Presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(796, 449);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgVenta);
             this.Controls.Add(this.gbMascota);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.gbCliente);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnHuespedImprimir);
+            this.Controls.Add(this.btnHuespedModificar);
+            this.Controls.Add(this.btnHuespedCerrar);
+            this.Controls.Add(this.btnHuespedEliminar);
             this.Controls.Add(this.btnHuespedRegistrar);
             this.Controls.Add(this.btnHuespedLimpiar);
             this.Name = "Huesped";
@@ -560,7 +589,7 @@ namespace Presentacion
             this.gbMascota.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgVenta)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -607,10 +636,12 @@ namespace Presentacion
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnHuespedLimpiar;
         private System.Windows.Forms.Button btnHuespedRegistrar;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnHuespedEliminar;
+        private System.Windows.Forms.Button btnHuespedModificar;
         private System.Windows.Forms.TextBox tbxMascotaEdad;
         private System.Windows.Forms.ComboBox cbxServicioPaquete;
+        private System.Windows.Forms.DataGridView dgVenta;
+        private System.Windows.Forms.Button btnHuespedCerrar;
+        private System.Windows.Forms.Button btnHuespedImprimir;
     }
 }

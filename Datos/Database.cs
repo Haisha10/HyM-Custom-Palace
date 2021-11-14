@@ -15,16 +15,15 @@ namespace Datos
         {
             try
             {
-                string cadenadeconexion = @"Data Source=DESKTOP-VSJS462\SQLEXPRESS; Initial Catalog = dbHotel; Integrated Security = True";
+                string cadenadeconexion = @"Server=DESKTOP-VSJS462\SQLEXPRESS; Initial Catalog=dbHotel; Integrated Security=True";
                 conn = new SqlConnection(cadenadeconexion);
 
                 conn.Open();
                 return conn;
             }
             catch (SqlException e)
-            //hacemos entidades? como se llamaria eHotel no? creo q eCliente eMascota  uhmmm uno para cd uno , q dicen los demás? :V
             {
-                return null;
+                return conn;
             }
         }
         public void DesconectaDb()
