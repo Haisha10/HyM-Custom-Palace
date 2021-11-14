@@ -17,6 +17,9 @@ namespace Presentacion
         public Recuperacion()
         {
             InitializeComponent();
+            Bitmap img = new Bitmap(Application.StartupPath + @"\img\bck_restablecer_contrasena.png");
+            this.BackgroundImage = img;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void btnReestablecerContrasena_Click(object sender, EventArgs e)

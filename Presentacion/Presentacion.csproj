@@ -129,6 +129,7 @@
     <Content Include="img\bck_administrador.png" />
     <Content Include="img\bck_huesped.png" />
     <Content Include="img\bck_login.png" />
+    <Content Include="img\bck_restablecer_contrasena.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
