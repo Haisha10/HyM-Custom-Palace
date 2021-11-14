@@ -43,6 +43,7 @@ namespace Presentacion
             nombreRecepcionista = nombre;
             btnHuespedModificar.Enabled = false;
             btnHuespedEliminar.Enabled = false;
+            btnHuespedImprimir.Enabled = false;
             MostrarVentas();
         }
         private void MostrarVentas()
@@ -305,6 +306,13 @@ namespace Presentacion
                 idMascota = null;
             }
             gServicio.ModificarServicio(idServicio, Convert.ToInt32(tbxServicioNumero.Text), tipo, tbxServicioTematica.Text, cbxServicioPaquete.SelectedItem.ToString(), Convert.ToDouble(lblServicioPrecio.Text), DateTime.Parse(tbxServicioIngreso.Text), DateTime.Parse(tbxServicioSalida.Text), DateTime.Now, idCliente, idMascota);
+            MostrarVentas();
+            LimpiarControles();
+        }
+
+        private void btnHuespedEliminar_Click(object sender, EventArgs e)
+        {
+            gServicio.EliminarServicio(idServicio);
             MostrarVentas();
             LimpiarControles();
         }

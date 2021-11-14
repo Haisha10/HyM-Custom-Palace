@@ -509,12 +509,13 @@ namespace Presentacion
             this.btnHuespedEliminar.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnHuespedEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuespedEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnHuespedEliminar.Location = new System.Drawing.Point(663, 363);
+            this.btnHuespedEliminar.Location = new System.Drawing.Point(1011, 363);
             this.btnHuespedEliminar.Name = "btnHuespedEliminar";
             this.btnHuespedEliminar.Size = new System.Drawing.Size(114, 32);
             this.btnHuespedEliminar.TabIndex = 4;
             this.btnHuespedEliminar.Text = "Eliminar";
             this.btnHuespedEliminar.UseVisualStyleBackColor = false;
+            this.btnHuespedEliminar.Click += new System.EventHandler(this.btnHuespedEliminar_Click);
             // 
             // btnHuespedModificar
             // 
@@ -522,7 +523,7 @@ namespace Presentacion
             this.btnHuespedModificar.FlatAppearance.BorderSize = 0;
             this.btnHuespedModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuespedModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnHuespedModificar.Location = new System.Drawing.Point(533, 363);
+            this.btnHuespedModificar.Location = new System.Drawing.Point(881, 363);
             this.btnHuespedModificar.Name = "btnHuespedModificar";
             this.btnHuespedModificar.Size = new System.Drawing.Size(114, 32);
             this.btnHuespedModificar.TabIndex = 3;
@@ -535,7 +536,7 @@ namespace Presentacion
             this.dgVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVenta.Location = new System.Drawing.Point(518, 108);
             this.dgVenta.Name = "dgVenta";
-            this.dgVenta.Size = new System.Drawing.Size(266, 239);
+            this.dgVenta.Size = new System.Drawing.Size(937, 239);
             this.dgVenta.TabIndex = 11;
             this.dgVenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVenta_CellClick);
             // 
@@ -544,7 +545,7 @@ namespace Presentacion
             this.btnHuespedCerrar.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnHuespedCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuespedCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnHuespedCerrar.Location = new System.Drawing.Point(663, 402);
+            this.btnHuespedCerrar.Location = new System.Drawing.Point(1012, 403);
             this.btnHuespedCerrar.Name = "btnHuespedCerrar";
             this.btnHuespedCerrar.Size = new System.Drawing.Size(114, 32);
             this.btnHuespedCerrar.TabIndex = 4;
@@ -558,7 +559,7 @@ namespace Presentacion
             this.btnHuespedImprimir.FlatAppearance.BorderSize = 0;
             this.btnHuespedImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuespedImprimir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnHuespedImprimir.Location = new System.Drawing.Point(533, 402);
+            this.btnHuespedImprimir.Location = new System.Drawing.Point(882, 403);
             this.btnHuespedImprimir.Name = "btnHuespedImprimir";
             this.btnHuespedImprimir.Size = new System.Drawing.Size(114, 32);
             this.btnHuespedImprimir.TabIndex = 3;
@@ -571,7 +572,7 @@ namespace Presentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(796, 449);
+            this.ClientSize = new System.Drawing.Size(1484, 449);
             this.Controls.Add(this.dgVenta);
             this.Controls.Add(this.gbMascota);
             this.Controls.Add(this.groupBox3);

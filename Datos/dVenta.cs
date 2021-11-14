@@ -57,7 +57,6 @@ namespace Datos
                     }
                     lsVenta.Add(venta);
                 }
-                int intems = lsVenta.Count();
                 reader.Close();
                 return lsVenta;
             }
