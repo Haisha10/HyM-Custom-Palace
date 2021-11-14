@@ -170,6 +170,7 @@ namespace Presentacion
             this.tbxClienteTelefono.Name = "tbxClienteTelefono";
             this.tbxClienteTelefono.Size = new System.Drawing.Size(100, 22);
             this.tbxClienteTelefono.TabIndex = 4;
+            this.tbxClienteTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxClienteTelefono_KeyPress);
             // 
             // tbxClienteDni
             // 
@@ -177,6 +178,7 @@ namespace Presentacion
             this.tbxClienteDni.Name = "tbxClienteDni";
             this.tbxClienteDni.Size = new System.Drawing.Size(100, 22);
             this.tbxClienteDni.TabIndex = 3;
+            this.tbxClienteDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxClienteDni_KeyPress);
             // 
             // tbxClienteApellido
             // 
@@ -254,6 +256,7 @@ namespace Presentacion
             this.tbxMascotaEdad.Name = "tbxMascotaEdad";
             this.tbxMascotaEdad.Size = new System.Drawing.Size(108, 22);
             this.tbxMascotaEdad.TabIndex = 10;
+            this.tbxMascotaEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxMascotaEdad_KeyPress);
             // 
             // tbxMascotaTipo
             // 
@@ -341,7 +344,7 @@ namespace Presentacion
             this.cbxServicioPaquete.Location = new System.Drawing.Point(119, 120);
             this.cbxServicioPaquete.Name = "cbxServicioPaquete";
             this.cbxServicioPaquete.Size = new System.Drawing.Size(108, 24);
-            this.cbxServicioPaquete.TabIndex = 18;
+            this.cbxServicioPaquete.TabIndex = 13;
             this.cbxServicioPaquete.SelectedIndexChanged += new System.EventHandler(this.cbxServicioPaquete_SelectedIndexChanged);
             // 
             // lblServicioPrecio
@@ -367,7 +370,7 @@ namespace Presentacion
             this.tbxServicioTematica.Location = new System.Drawing.Point(119, 92);
             this.tbxServicioTematica.Name = "tbxServicioTematica";
             this.tbxServicioTematica.Size = new System.Drawing.Size(108, 22);
-            this.tbxServicioTematica.TabIndex = 5;
+            this.tbxServicioTematica.TabIndex = 12;
             this.tbxServicioTematica.Leave += new System.EventHandler(this.tbxServicioTematica_Leave);
             // 
             // tbxServicioSalida
@@ -375,21 +378,22 @@ namespace Presentacion
             this.tbxServicioSalida.Location = new System.Drawing.Point(119, 201);
             this.tbxServicioSalida.Name = "tbxServicioSalida";
             this.tbxServicioSalida.Size = new System.Drawing.Size(108, 22);
-            this.tbxServicioSalida.TabIndex = 5;
+            this.tbxServicioSalida.TabIndex = 15;
             // 
             // tbxServicioIngreso
             // 
             this.tbxServicioIngreso.Location = new System.Drawing.Point(119, 172);
             this.tbxServicioIngreso.Name = "tbxServicioIngreso";
             this.tbxServicioIngreso.Size = new System.Drawing.Size(108, 22);
-            this.tbxServicioIngreso.TabIndex = 5;
+            this.tbxServicioIngreso.TabIndex = 14;
             // 
             // tbxServicioNumero
             // 
             this.tbxServicioNumero.Location = new System.Drawing.Point(119, 35);
             this.tbxServicioNumero.Name = "tbxServicioNumero";
             this.tbxServicioNumero.Size = new System.Drawing.Size(108, 22);
-            this.tbxServicioNumero.TabIndex = 5;
+            this.tbxServicioNumero.TabIndex = 11;
+            this.tbxServicioNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxServicioNumero_KeyPress);
             // 
             // label19
             // 
@@ -485,7 +489,7 @@ namespace Presentacion
             this.btnHuespedLimpiar.Location = new System.Drawing.Point(296, 394);
             this.btnHuespedLimpiar.Name = "btnHuespedLimpiar";
             this.btnHuespedLimpiar.Size = new System.Drawing.Size(114, 32);
-            this.btnHuespedLimpiar.TabIndex = 4;
+            this.btnHuespedLimpiar.TabIndex = 17;
             this.btnHuespedLimpiar.Text = "Limpiar";
             this.btnHuespedLimpiar.UseVisualStyleBackColor = false;
             this.btnHuespedLimpiar.Click += new System.EventHandler(this.btnHuespedLimpiar_Click);
@@ -499,7 +503,7 @@ namespace Presentacion
             this.btnHuespedRegistrar.Location = new System.Drawing.Point(296, 356);
             this.btnHuespedRegistrar.Name = "btnHuespedRegistrar";
             this.btnHuespedRegistrar.Size = new System.Drawing.Size(114, 32);
-            this.btnHuespedRegistrar.TabIndex = 3;
+            this.btnHuespedRegistrar.TabIndex = 16;
             this.btnHuespedRegistrar.Text = "Registrar";
             this.btnHuespedRegistrar.UseVisualStyleBackColor = false;
             this.btnHuespedRegistrar.Click += new System.EventHandler(this.btnHuespedRegistrar_Click);

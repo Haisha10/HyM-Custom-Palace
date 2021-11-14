@@ -15,20 +15,16 @@ namespace Presentacion
     public partial class Huesped : Form
     {
         nCliente gCliente = new nCliente();
-        eCliente clienteseleccionado = null;
         int idCliente;
 
         nMascota gMascota = new nMascota();
-        eMascota mascotaseleccionado = null;
         int? idMascota;
 
         nServicio gServicio = new nServicio();
-        eServicio servicioseleccionado = null;
         int idServicio;
 
         nVenta gVenta = new nVenta();
         eVenta ventaseleccionado = null;
-        int idVenta;
 
         string nombreRecepcionista;
         public Huesped(string nombre)
@@ -37,13 +33,11 @@ namespace Presentacion
             Bitmap img = new Bitmap(Application.StartupPath + @"\img\bck_huesped.png");
             this.BackgroundImage = img;
             this.BackgroundImageLayout = ImageLayout.Stretch;
+            tbxClienteDni.MaxLength = 8;
+            tbxClienteTelefono.MaxLength = 9;
             gbMascota.Enabled = false;
-            rbnClienteMascotaNo.Checked = true;
-            rbnServicioTipoClasico.Checked = true;
             nombreRecepcionista = nombre;
-            btnHuespedModificar.Enabled = false;
-            btnHuespedEliminar.Enabled = false;
-            btnHuespedImprimir.Enabled = false;
+            LimpiarControles(); ;
             MostrarVentas();
         }
         private void MostrarVentas()
@@ -315,6 +309,38 @@ namespace Presentacion
             gServicio.EliminarServicio(idServicio);
             MostrarVentas();
             LimpiarControles();
+        }
+
+        private void tbxClienteDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxClienteTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxMascotaEdad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxServicioNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
