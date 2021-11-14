@@ -60,7 +60,7 @@ namespace Datos
                 cmd.Parameters.AddWithValue("@fecha_salida", o.Fecha_salida);
                 cmd.Parameters.AddWithValue("@fecha_facturacion", o.Fecha_facturacion);
                 cmd.Parameters.AddWithValue("@id_cliente", o.Id_cliente);
-                cmd.Parameters.AddWithValue("@id_mascota", o.Id_mascota);
+                cmd.Parameters.AddWithValue("@id_mascota", o.Id_mascota ?? Convert.DBNull);
                 cmd.Parameters.AddWithValue("@id", o.Id);
                 cmd.ExecuteNonQuery();
                 cmd.Parameters.Clear();

@@ -278,5 +278,35 @@ namespace Presentacion
                 ventaseleccionado.Precio_servicio))
                 frmFacturacion.ShowDialog();
         }
+
+        private void btnHuespedCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnHuespedModificar_Click(object sender, EventArgs e)
+        {
+            string tipo;
+            if (rbnServicioTipoClasico.Checked)
+            {
+                tipo = "Clasico";
+            }
+            else
+            {
+                tipo = "Personalizado";
+            }
+            idCliente = gCliente.RegistrarCliente(tbxClienteNombre.Text.Trim(), tbxClienteApellido.Text.Trim(), Convert.ToInt64(tbxClienteDni.Text.Trim()), tbxClienteCorreo.Text.Trim(), Convert.ToInt64(tbxClienteTelefono.Text.Trim()));
+            if (gbMascota.Enabled)
+            {
+                idMascota = gMascota.RegistrarMascota(tbxMascotaNombre.Text.Trim(), tbxMascotaTipo.Text.Trim(), Convert.ToInt32(tbxMascotaEdad.Text.Trim()));
+            }
+            else
+            {
+                idMascota = null;
+            }
+            gServicio.ModificarServicio(idServicio, Convert.ToInt32(tbxServicioNumero.Text), tipo, tbxServicioTematica.Text, cbxServicioPaquete.SelectedItem.ToString(), Convert.ToDouble(lblServicioPrecio.Text), DateTime.Parse(tbxServicioIngreso.Text), DateTime.Parse(tbxServicioSalida.Text), DateTime.Now, idCliente, idMascota);
+            MostrarVentas();
+            LimpiarControles();
+        }
     }
 }

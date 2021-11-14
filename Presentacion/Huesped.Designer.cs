@@ -528,6 +528,7 @@ namespace Presentacion
             this.btnHuespedModificar.TabIndex = 3;
             this.btnHuespedModificar.Text = "Modificar";
             this.btnHuespedModificar.UseVisualStyleBackColor = false;
+            this.btnHuespedModificar.Click += new System.EventHandler(this.btnHuespedModificar_Click);
             // 
             // dgVenta
             // 
@@ -549,6 +550,7 @@ namespace Presentacion
             this.btnHuespedCerrar.TabIndex = 4;
             this.btnHuespedCerrar.Text = "Cerrar Sesión";
             this.btnHuespedCerrar.UseVisualStyleBackColor = false;
+            this.btnHuespedCerrar.Click += new System.EventHandler(this.btnHuespedCerrar_Click);
             // 
             // btnHuespedImprimir
             // 

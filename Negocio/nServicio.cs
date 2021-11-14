@@ -32,7 +32,7 @@ namespace Negocio
             };
             return serviciodao.Insertar(servicio);
         }
-        public void ModificarServicio(int id, int numero_habitacion, string tipo_habitacion, string tematica, string paquete, double precio, DateTime fecha_ingreso, DateTime fecha_salida, DateTime fecha_facturacion, int id_cliente, int id_mascota)
+        public void ModificarServicio(int id, int numero_habitacion, string tipo_habitacion, string tematica, string paquete, double precio, DateTime fecha_ingreso, DateTime fecha_salida, DateTime fecha_facturacion, int id_cliente, int? id_mascota)
         {
             eServicio servicio = new eServicio()
             {
