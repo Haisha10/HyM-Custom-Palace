@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using Datos;
 using Entidades;
 
@@ -57,6 +58,28 @@ namespace Negocio
         public List<eServicio> ListarServicio()
         {
             return serviciodao.ListarTodo();
+        }
+
+        public DataTable TipoTematica(string tipo)
+        {
+            return serviciodao.TipoTematica(tipo);
+        }
+
+        public DataTable IntervaloFecha(DateTime fecha1, DateTime fecha2)
+        {
+            return serviciodao.IntevaloFecha(fecha1, fecha2);
+        }
+
+        public DataTable tipoHabitacion(string tipo)
+        {
+            return serviciodao.TipoHabitacion(tipo);
+        }
+
+        public DataTable Buscar_Servicios_en_Rango_Mes(DateTime mes1, DateTime mes2)
+        {
+            DataTable tabla = new DataTable();
+            tabla = serviciodao.Buscar_Servicios_en_Rango_Mes(mes1, mes2);
+            return tabla;
         }
     }
 }

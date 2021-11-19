@@ -134,5 +134,103 @@ namespace Datos
                 db.DesconectaDb();
             }
         }
+
+        public DataTable TipoTematica(string tematica)
+        {
+            DataTable table = new DataTable();
+            try
+            {
+                SqlConnection con = db.ConectaDb();
+                SqlCommand cmd = new SqlCommand("TipoTematica", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@tematica", tematica);
+                SqlDataReader reader = cmd.ExecuteReader();
+                table.Load(reader);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                db.DesconectaDb();
+            }
+            return table;
+        }
+
+        public DataTable IntevaloFecha(DateTime fecha1, DateTime fecha2)
+        {
+            DataTable table = new DataTable();
+            try
+            {
+                SqlConnection con = db.ConectaDb();
+                SqlCommand cmd = new SqlCommand("IntervaloFechas", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@fecha1", fecha1);
+                cmd.Parameters.AddWithValue("@fecha2", fecha2);
+                SqlDataReader reader = cmd.ExecuteReader();
+                table.Load(reader);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                db.DesconectaDb();
+            }
+            return table;
+        }
+
+        public DataTable TipoHabitacion(string tipohabitacion)
+        {
+            DataTable table = new DataTable();
+            try
+            {
+                SqlConnection con = db.ConectaDb();
+                SqlCommand cmd = new SqlCommand("TipoHabitacion", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@tipo", tipohabitacion);
+                SqlDataReader reader = cmd.ExecuteReader();
+                table.Load(reader);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                db.DesconectaDb();
+            }
+            return table;
+        }
+
+        public DataTable Buscar_Servicios_en_Rango_Mes(DateTime mes1, DateTime mes2)
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                SqlConnection con = db.ConectaDb();
+                string mostrar = "Buscar_Servicios_en_Rango_Mes";
+                SqlCommand cmd = new SqlCommand(mostrar, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@mes1", SqlDbType.DateTime).Value = mes1;
+                cmd.Parameters.Add("@mes2", SqlDbType.DateTime).Value = mes2;
+
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                tabla.Load(reader);
+            }
+            catch (Exception)
+            {
+
+                //throw;
+            }
+            finally
+            {
+                db.DesconectaDb();
+            }
+            return tabla;
+        }
     }
 }

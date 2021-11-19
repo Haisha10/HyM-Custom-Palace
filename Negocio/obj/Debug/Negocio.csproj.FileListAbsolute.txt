@@ -20,3 +20,25 @@ C:\Users\Alvaro\source\repos\HyM-Custom-Palace\Negocio\bin\Debug\Entidades.dll
 C:\Users\Alvaro\source\repos\HyM-Custom-Palace\Negocio\bin\Debug\Datos.pdb
 C:\Users\Alvaro\source\repos\HyM-Custom-Palace\Negocio\bin\Debug\Entidades.pdb
 C:\Users\Alvaro\source\repos\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Negocio\bin\Debug\Negocio.dll
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Negocio\bin\Debug\Negocio.pdb
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Negocio\bin\Debug\Datos.dll
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Negocio\bin\Debug\Entidades.dll
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Negocio\bin\Debug\Datos.pdb
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Negocio\bin\Debug\Entidades.pdb
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Negocio\obj\Debug\Negocio.dll
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Negocio\bin\Debug\Negocio.dll
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Negocio\bin\Debug\Datos.dll
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Negocio\bin\Debug\Entidades.dll
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Negocio\bin\Debug\Datos.pdb
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Negocio\bin\Debug\Entidades.pdb
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Negocio\obj\Debug\Negocio.dll
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Negocio\obj\Debug\Negocio.pdb

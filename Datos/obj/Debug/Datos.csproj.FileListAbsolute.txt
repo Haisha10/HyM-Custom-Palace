@@ -16,3 +16,21 @@ C:\Users\Alvaro\source\repos\HyM-Custom-Palace\Datos\bin\Debug\Datos.pdb
 C:\Users\Alvaro\source\repos\HyM-Custom-Palace\Datos\bin\Debug\Entidades.dll
 C:\Users\Alvaro\source\repos\HyM-Custom-Palace\Datos\bin\Debug\Entidades.pdb
 C:\Users\Alvaro\source\repos\HyM-Custom-Palace\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Datos\bin\Debug\Datos.dll
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Datos\bin\Debug\Datos.pdb
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Datos\bin\Debug\Entidades.dll
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Datos\bin\Debug\Entidades.pdb
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Datos\obj\Debug\Datos.dll
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\CODE\HyM Custom Palace\Datos\obj\Debug\Datos.pdb
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Datos\bin\Debug\Datos.dll
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Datos\bin\Debug\Datos.pdb
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Datos\bin\Debug\Entidades.dll
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Datos\bin\Debug\Entidades.pdb
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Datos\obj\Debug\Datos.dll
+C:\Users\Alvaro\Downloads\HyM Custom Palace Final\HyM Custom Palace\Datos\obj\Debug\Datos.pdb

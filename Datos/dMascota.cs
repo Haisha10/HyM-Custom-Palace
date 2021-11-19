@@ -112,5 +112,38 @@ namespace Datos
                 db.DesconectaDb();
             }
         }
+
+        public List<eMascota> ConsultarTipoMascota(string tipo)
+        {
+            try
+            {
+                List<eMascota> lsMascota = new List<eMascota>();
+                eMascota mascota = null;
+                SqlConnection con = db.ConectaDb();
+                SqlCommand cmd = new SqlCommand("ConsultarTipoMascota", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@tipo", tipo);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    mascota = new eMascota();
+                    mascota.Id = (int)reader["id"];
+                    mascota.Nombre = (string)reader["nombre"];
+                    mascota.Tipo = (string)reader["tipo"];
+                    mascota.Edad = (int)reader["edad"];
+                    lsMascota.Add(mascota);
+                }
+                reader.Close();
+                return lsMascota;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                db.DesconectaDb();
+            }
+        }
     }
 }

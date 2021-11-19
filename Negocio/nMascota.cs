@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using System.Threading.Tasks;
 using Entidades;
 using Datos;
@@ -43,6 +44,11 @@ namespace Negocio
         public List<eMascota> ListarMascota()
         {
             return mascotadao.ListarTodo();
+        }
+
+        public List<eMascota> ConsultarTipoMascota(string tipo)
+        {
+            return mascotadao.ConsultarTipoMascota(tipo);
         }
     }
 }
