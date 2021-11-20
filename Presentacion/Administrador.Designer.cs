@@ -200,6 +200,12 @@ namespace Presentacion
             this.dgvReportes = new System.Windows.Forms.DataGridView();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label59 = new System.Windows.Forms.Label();
+            this.lblPersonasReportadas = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.lblCantFacturacion = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.gbUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
@@ -1118,6 +1124,7 @@ namespace Presentacion
             this.dgvEFE.Name = "dgvEFE";
             this.dgvEFE.Size = new System.Drawing.Size(582, 169);
             this.dgvEFE.TabIndex = 0;
+            this.dgvEFE.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEFE_CellClick);
             // 
             // gbER
             // 
@@ -1144,7 +1151,7 @@ namespace Presentacion
             this.gbER.Controls.Add(this.F);
             this.gbER.Controls.Add(this.dgvER);
             this.gbER.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gbER.Location = new System.Drawing.Point(169, 13);
+            this.gbER.Location = new System.Drawing.Point(171, 14);
             this.gbER.Name = "gbER";
             this.gbER.Size = new System.Drawing.Size(617, 425);
             this.gbER.TabIndex = 16;
@@ -1386,6 +1393,7 @@ namespace Presentacion
             this.dgvER.Name = "dgvER";
             this.dgvER.Size = new System.Drawing.Size(582, 169);
             this.dgvER.TabIndex = 0;
+            this.dgvER.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvER_CellClick);
             // 
             // gbESF
             // 
@@ -1412,7 +1420,7 @@ namespace Presentacion
             this.gbESF.Controls.Add(this.label36);
             this.gbESF.Controls.Add(this.dgvESF);
             this.gbESF.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gbESF.Location = new System.Drawing.Point(169, 14);
+            this.gbESF.Location = new System.Drawing.Point(171, 13);
             this.gbESF.Name = "gbESF";
             this.gbESF.Size = new System.Drawing.Size(618, 425);
             this.gbESF.TabIndex = 22;
@@ -1648,6 +1656,7 @@ namespace Presentacion
             this.dgvESF.Name = "dgvESF";
             this.dgvESF.Size = new System.Drawing.Size(582, 169);
             this.dgvESF.TabIndex = 0;
+            this.dgvESF.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvESF_CellClick);
             // 
             // gbReporte
             // 
@@ -1664,7 +1673,7 @@ namespace Presentacion
             this.gbReporte.Controls.Add(this.dgvReportes);
             this.gbReporte.Controls.Add(this.btnConsultar);
             this.gbReporte.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gbReporte.Location = new System.Drawing.Point(169, 12);
+            this.gbReporte.Location = new System.Drawing.Point(171, 15);
             this.gbReporte.Name = "gbReporte";
             this.gbReporte.Size = new System.Drawing.Size(617, 425);
             this.gbReporte.TabIndex = 22;
@@ -1752,11 +1761,14 @@ namespace Presentacion
             // 
             // gbFechaFacturacion
             // 
+            this.gbFechaFacturacion.Controls.Add(this.label60);
             this.gbFechaFacturacion.Controls.Add(this.txtMesFin);
+            this.gbFechaFacturacion.Controls.Add(this.lblCantFacturacion);
             this.gbFechaFacturacion.Controls.Add(this.txtMesInicio);
+            this.gbFechaFacturacion.Controls.Add(this.label63);
             this.gbFechaFacturacion.Controls.Add(this.label42);
             this.gbFechaFacturacion.Controls.Add(this.label56);
-            this.gbFechaFacturacion.Location = new System.Drawing.Point(7, 64);
+            this.gbFechaFacturacion.Location = new System.Drawing.Point(8, 65);
             this.gbFechaFacturacion.Name = "gbFechaFacturacion";
             this.gbFechaFacturacion.Size = new System.Drawing.Size(597, 129);
             this.gbFechaFacturacion.TabIndex = 54;
@@ -1804,7 +1816,7 @@ namespace Presentacion
             this.gbClientesMascota.Controls.Add(this.lblClientConM);
             this.gbClientesMascota.Controls.Add(this.label52);
             this.gbClientesMascota.Controls.Add(this.lblClientSinM);
-            this.gbClientesMascota.Location = new System.Drawing.Point(7, 63);
+            this.gbClientesMascota.Location = new System.Drawing.Point(7, 64);
             this.gbClientesMascota.Name = "gbClientesMascota";
             this.gbClientesMascota.Size = new System.Drawing.Size(597, 129);
             this.gbClientesMascota.TabIndex = 53;
@@ -1945,7 +1957,7 @@ namespace Presentacion
             this.gbTematica.Controls.Add(this.label50);
             this.gbTematica.Controls.Add(this.txttipotematica);
             this.gbTematica.Controls.Add(this.label43);
-            this.gbTematica.Location = new System.Drawing.Point(8, 65);
+            this.gbTematica.Location = new System.Drawing.Point(8, 66);
             this.gbTematica.Name = "gbTematica";
             this.gbTematica.Size = new System.Drawing.Size(597, 129);
             this.gbTematica.TabIndex = 46;
@@ -2021,6 +2033,9 @@ namespace Presentacion
             // 
             // gbIntervalofecha
             // 
+            this.gbIntervalofecha.Controls.Add(this.label61);
+            this.gbIntervalofecha.Controls.Add(this.lblPersonasReportadas);
+            this.gbIntervalofecha.Controls.Add(this.label59);
             this.gbIntervalofecha.Controls.Add(this.txtfecha2);
             this.gbIntervalofecha.Controls.Add(this.txtfecha1);
             this.gbIntervalofecha.Controls.Add(this.label45);
@@ -2208,14 +2223,68 @@ namespace Presentacion
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(9, 91);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(74, 13);
+            this.label59.TabIndex = 57;
+            this.label59.Text = "Se reportaron ";
+            // 
+            // lblPersonasReportadas
+            // 
+            this.lblPersonasReportadas.AutoSize = true;
+            this.lblPersonasReportadas.Location = new System.Drawing.Point(86, 91);
+            this.lblPersonasReportadas.Name = "lblPersonasReportadas";
+            this.lblPersonasReportadas.Size = new System.Drawing.Size(10, 13);
+            this.lblPersonasReportadas.TabIndex = 58;
+            this.lblPersonasReportadas.Text = "-";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(107, 91);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(178, 13);
+            this.label61.TabIndex = 59;
+            this.label61.Text = "clientes en dicho intervalo de fecha.";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(179, 88);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(188, 13);
+            this.label60.TabIndex = 62;
+            this.label60.Text = "servicios en dicho intervalo de fechas.";
+            // 
+            // lblCantFacturacion
+            // 
+            this.lblCantFacturacion.AutoSize = true;
+            this.lblCantFacturacion.Location = new System.Drawing.Point(154, 90);
+            this.lblCantFacturacion.Name = "lblCantFacturacion";
+            this.lblCantFacturacion.Size = new System.Drawing.Size(10, 13);
+            this.lblCantFacturacion.TabIndex = 61;
+            this.lblCantFacturacion.Text = "-";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(51, 90);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(97, 13);
+            this.label63.TabIndex = 60;
+            this.label63.Text = "En total se registró ";
+            // 
             // Administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 454);
+            this.Controls.Add(this.gbReporte);
             this.Controls.Add(this.gbESF);
             this.Controls.Add(this.gbER);
-            this.Controls.Add(this.gbReporte);
             this.Controls.Add(this.gbEFE);
             this.Controls.Add(this.gbMascotas);
             this.Controls.Add(this.gbUsuarios);
@@ -2438,6 +2507,12 @@ namespace Presentacion
         private System.Windows.Forms.TextBox txtFecha1EEFF;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label lblPersonasReportadas;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label lblCantFacturacion;
+        private System.Windows.Forms.Label label63;
     }
 }
 

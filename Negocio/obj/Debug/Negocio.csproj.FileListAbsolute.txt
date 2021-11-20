@@ -64,3 +64,14 @@ D:\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
 D:\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 D:\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.dll
 D:\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.pdb
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\aasdsad\HyM-Custom-Palace\Negocio\bin\Debug\Negocio.dll
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\aasdsad\HyM-Custom-Palace\Negocio\bin\Debug\Negocio.pdb
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\aasdsad\HyM-Custom-Palace\Negocio\bin\Debug\Datos.dll
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\aasdsad\HyM-Custom-Palace\Negocio\bin\Debug\Entidades.dll
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\aasdsad\HyM-Custom-Palace\Negocio\bin\Debug\Datos.pdb
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\aasdsad\HyM-Custom-Palace\Negocio\bin\Debug\Entidades.pdb
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\aasdsad\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\aasdsad\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\aasdsad\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\aasdsad\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.dll
+C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\aasdsad\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.pdb
