@@ -149,6 +149,23 @@ namespace Presentacion
             this.label36 = new System.Windows.Forms.Label();
             this.dgvESF = new System.Windows.Forms.DataGridView();
             this.gbReporte = new System.Windows.Forms.GroupBox();
+            this.gbReportesFinancieros = new System.Windows.Forms.GroupBox();
+            this.cmbEEFF = new System.Windows.Forms.ComboBox();
+            this.txtFecha2EEFF = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.txtFecha1EEFF = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.gbFechaFacturacion = new System.Windows.Forms.GroupBox();
+            this.txtMesFin = new System.Windows.Forms.TextBox();
+            this.txtMesInicio = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.gbClientesMascota = new System.Windows.Forms.GroupBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.lblClientConM = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.lblClientSinM = new System.Windows.Forms.Label();
             this.gbReporteMascota = new System.Windows.Forms.GroupBox();
             this.lbltipomascota = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
@@ -183,16 +200,6 @@ namespace Presentacion
             this.dgvReportes = new System.Windows.Forms.DataGridView();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.gbClientesMascota = new System.Windows.Forms.GroupBox();
-            this.lblClientConM = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.lblClientSinM = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.gbFechaFacturacion = new System.Windows.Forms.GroupBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.txtMesInicio = new System.Windows.Forms.TextBox();
-            this.txtMesFin = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.gbUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
@@ -207,13 +214,14 @@ namespace Presentacion
             this.gbESF.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvESF)).BeginInit();
             this.gbReporte.SuspendLayout();
+            this.gbReportesFinancieros.SuspendLayout();
+            this.gbFechaFacturacion.SuspendLayout();
+            this.gbClientesMascota.SuspendLayout();
             this.gbReporteMascota.SuspendLayout();
             this.gbTematica.SuspendLayout();
             this.gbIntervalofecha.SuspendLayout();
             this.gbtipohabitacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportes)).BeginInit();
-            this.gbClientesMascota.SuspendLayout();
-            this.gbFechaFacturacion.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -247,6 +255,7 @@ namespace Presentacion
             this.btnCerrar.TabIndex = 3;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnReporte
             // 
@@ -950,6 +959,7 @@ namespace Presentacion
             this.txtFechaEFE.Name = "txtFechaEFE";
             this.txtFechaEFE.Size = new System.Drawing.Size(115, 22);
             this.txtFechaEFE.TabIndex = 15;
+            this.txtFechaEFE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtrosGaeInER_KeyPress);
             // 
             // txtAInversion
             // 
@@ -959,7 +969,8 @@ namespace Presentacion
             this.txtAInversion.Name = "txtAInversion";
             this.txtAInversion.Size = new System.Drawing.Size(115, 22);
             this.txtAInversion.TabIndex = 14;
-            this.txtAInversion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAInversion_KeyPress);
+            this.txtAInversion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtrosGaeInER_KeyPress);
+            this.txtAInversion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAOperacion_KeyUp);
             // 
             // txtEfectEquiv
             // 
@@ -979,7 +990,8 @@ namespace Presentacion
             this.txtAOperacion.Name = "txtAOperacion";
             this.txtAOperacion.Size = new System.Drawing.Size(115, 22);
             this.txtAOperacion.TabIndex = 12;
-            this.txtAOperacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAOperacion_KeyPress);
+            this.txtAOperacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtrosGaeInER_KeyPress);
+            this.txtAOperacion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAOperacion_KeyUp);
             // 
             // txtAFinanciacion
             // 
@@ -989,7 +1001,8 @@ namespace Presentacion
             this.txtAFinanciacion.Name = "txtAFinanciacion";
             this.txtAFinanciacion.Size = new System.Drawing.Size(115, 22);
             this.txtAFinanciacion.TabIndex = 8;
-            this.txtAFinanciacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAFinanciacion_KeyPress);
+            this.txtAFinanciacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtrosGaeInER_KeyPress);
+            this.txtAFinanciacion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAOperacion_KeyUp);
             // 
             // label20
             // 
@@ -1131,7 +1144,7 @@ namespace Presentacion
             this.gbER.Controls.Add(this.F);
             this.gbER.Controls.Add(this.dgvER);
             this.gbER.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gbER.Location = new System.Drawing.Point(171, 14);
+            this.gbER.Location = new System.Drawing.Point(169, 13);
             this.gbER.Name = "gbER";
             this.gbER.Size = new System.Drawing.Size(617, 425);
             this.gbER.TabIndex = 16;
@@ -1147,8 +1160,9 @@ namespace Presentacion
             this.txtCostoVentasER.Name = "txtCostoVentasER";
             this.txtCostoVentasER.Size = new System.Drawing.Size(115, 22);
             this.txtCostoVentasER.TabIndex = 21;
-            this.txtCostoVentasER.TextChanged += new System.EventHandler(this.txtCostoVentasER_TextChanged);
-            this.txtCostoVentasER.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCostoVentasER_KeyPress);
+            this.txtCostoVentasER.TextChanged += new System.EventHandler(this.txtOtrosGaeInER_KeyPress);
+            this.txtCostoVentasER.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtrosGaeInER_KeyPress);
+            this.txtCostoVentasER.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCostoVentasER_KeyUp);
             // 
             // label28
             // 
@@ -1168,7 +1182,7 @@ namespace Presentacion
             this.txtVentasER.Name = "txtVentasER";
             this.txtVentasER.Size = new System.Drawing.Size(115, 22);
             this.txtVentasER.TabIndex = 19;
-            this.txtVentasER.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVentasER_KeyPress);
+            this.txtVentasER.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtrosGaeInER_KeyPress);
             this.txtVentasER.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtVentasER_KeyUp);
             // 
             // label27
@@ -1189,7 +1203,7 @@ namespace Presentacion
             this.txtFechaRegistroER.Name = "txtFechaRegistroER";
             this.txtFechaRegistroER.Size = new System.Drawing.Size(115, 22);
             this.txtFechaRegistroER.TabIndex = 17;
-            this.txtFechaRegistroER.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFechaRegistroER_KeyPress);
+            this.txtFechaRegistroER.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtrosGaeInER_KeyPress);
             // 
             // label26
             // 
@@ -1221,10 +1235,12 @@ namespace Presentacion
             this.txtUtiOperativaER.Name = "txtUtiOperativaER";
             this.txtUtiOperativaER.Size = new System.Drawing.Size(115, 22);
             this.txtUtiOperativaER.TabIndex = 14;
+            this.txtUtiOperativaER.TextChanged += new System.EventHandler(this.txtUtiOperativaER_TextChanged);
             this.txtUtiOperativaER.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUtiOperativaER_KeyPress);
             // 
             // txtIRER
             // 
+            this.txtIRER.Enabled = false;
             this.txtIRER.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIRER.Location = new System.Drawing.Point(496, 281);
             this.txtIRER.MaxLength = 7;
@@ -1254,6 +1270,7 @@ namespace Presentacion
             this.txtOtrosGaeInER.Size = new System.Drawing.Size(115, 22);
             this.txtOtrosGaeInER.TabIndex = 8;
             this.txtOtrosGaeInER.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtrosGaeInER_KeyPress);
+            this.txtOtrosGaeInER.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtOtrosGaeInER_KeyUp);
             // 
             // label22
             // 
@@ -1271,9 +1288,9 @@ namespace Presentacion
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(329, 255);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(155, 16);
+            this.label23.Size = new System.Drawing.Size(89, 16);
             this.label23.TabIndex = 10;
-            this.label23.Text = "Otros Gastos e Ingresos:";
+            this.label23.Text = "Otros Gastos:";
             // 
             // btnLimpiarER
             // 
@@ -1395,7 +1412,7 @@ namespace Presentacion
             this.gbESF.Controls.Add(this.label36);
             this.gbESF.Controls.Add(this.dgvESF);
             this.gbESF.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gbESF.Location = new System.Drawing.Point(171, 13);
+            this.gbESF.Location = new System.Drawing.Point(169, 14);
             this.gbESF.Name = "gbESF";
             this.gbESF.Size = new System.Drawing.Size(618, 425);
             this.gbESF.TabIndex = 22;
@@ -1410,7 +1427,8 @@ namespace Presentacion
             this.txtActivoNoCorrienteESF.Name = "txtActivoNoCorrienteESF";
             this.txtActivoNoCorrienteESF.Size = new System.Drawing.Size(115, 22);
             this.txtActivoNoCorrienteESF.TabIndex = 21;
-            this.txtActivoNoCorrienteESF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtActivoNoCorrienteESF_KeyPress);
+            this.txtActivoNoCorrienteESF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtrosGaeInER_KeyPress);
+            this.txtActivoNoCorrienteESF.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtActivoNoCorrienteESF_KeyUp);
             // 
             // label29
             // 
@@ -1430,7 +1448,8 @@ namespace Presentacion
             this.txtActivoCorrienteESF.Name = "txtActivoCorrienteESF";
             this.txtActivoCorrienteESF.Size = new System.Drawing.Size(115, 22);
             this.txtActivoCorrienteESF.TabIndex = 19;
-            this.txtActivoCorrienteESF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtActivoCorrienteESF_KeyPress);
+            this.txtActivoCorrienteESF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtrosGaeInER_KeyPress);
+            this.txtActivoCorrienteESF.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtActivoNoCorrienteESF_KeyUp);
             // 
             // label30
             // 
@@ -1450,7 +1469,7 @@ namespace Presentacion
             this.txtFechaRegistroESF.Name = "txtFechaRegistroESF";
             this.txtFechaRegistroESF.Size = new System.Drawing.Size(115, 22);
             this.txtFechaRegistroESF.TabIndex = 17;
-            this.txtFechaRegistroESF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFechaRegistroESF_KeyPress);
+            this.txtFechaRegistroESF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtrosGaeInER_KeyPress);
             // 
             // label31
             // 
@@ -1480,7 +1499,8 @@ namespace Presentacion
             this.txtPasivoNoCorrienteESF.Name = "txtPasivoNoCorrienteESF";
             this.txtPasivoNoCorrienteESF.Size = new System.Drawing.Size(115, 22);
             this.txtPasivoNoCorrienteESF.TabIndex = 14;
-            this.txtPasivoNoCorrienteESF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPasivoNoCorrienteESF_KeyPress);
+            this.txtPasivoNoCorrienteESF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtrosGaeInER_KeyPress);
+            this.txtPasivoNoCorrienteESF.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPasivoCorrienteESF_KeyUp);
             // 
             // txtPatrimonioESF
             // 
@@ -1490,7 +1510,8 @@ namespace Presentacion
             this.txtPatrimonioESF.Name = "txtPatrimonioESF";
             this.txtPatrimonioESF.Size = new System.Drawing.Size(115, 22);
             this.txtPatrimonioESF.TabIndex = 13;
-            this.txtPatrimonioESF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPatrimonioESF_KeyPress);
+            this.txtPatrimonioESF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtrosGaeInER_KeyPress);
+            this.txtPatrimonioESF.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPasivoCorrienteESF_KeyUp);
             // 
             // txtTotalActivoESF
             // 
@@ -1510,7 +1531,8 @@ namespace Presentacion
             this.txtPasivoCorrienteESF.Name = "txtPasivoCorrienteESF";
             this.txtPasivoCorrienteESF.Size = new System.Drawing.Size(115, 22);
             this.txtPasivoCorrienteESF.TabIndex = 8;
-            this.txtPasivoCorrienteESF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPasivoCorrienteESF_KeyPress);
+            this.txtPasivoCorrienteESF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtrosGaeInER_KeyPress);
+            this.txtPasivoCorrienteESF.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPasivoCorrienteESF_KeyUp);
             // 
             // label32
             // 
@@ -1630,6 +1652,7 @@ namespace Presentacion
             // gbReporte
             // 
             this.gbReporte.BackColor = System.Drawing.Color.Transparent;
+            this.gbReporte.Controls.Add(this.gbReportesFinancieros);
             this.gbReporte.Controls.Add(this.gbFechaFacturacion);
             this.gbReporte.Controls.Add(this.gbClientesMascota);
             this.gbReporte.Controls.Add(this.gbReporteMascota);
@@ -1647,6 +1670,187 @@ namespace Presentacion
             this.gbReporte.TabIndex = 22;
             this.gbReporte.TabStop = false;
             this.gbReporte.Text = "Reportes";
+            // 
+            // gbReportesFinancieros
+            // 
+            this.gbReportesFinancieros.Controls.Add(this.cmbEEFF);
+            this.gbReportesFinancieros.Controls.Add(this.txtFecha2EEFF);
+            this.gbReportesFinancieros.Controls.Add(this.label58);
+            this.gbReportesFinancieros.Controls.Add(this.txtFecha1EEFF);
+            this.gbReportesFinancieros.Controls.Add(this.label54);
+            this.gbReportesFinancieros.Controls.Add(this.label57);
+            this.gbReportesFinancieros.Location = new System.Drawing.Point(7, 65);
+            this.gbReportesFinancieros.Name = "gbReportesFinancieros";
+            this.gbReportesFinancieros.Size = new System.Drawing.Size(597, 129);
+            this.gbReportesFinancieros.TabIndex = 56;
+            this.gbReportesFinancieros.TabStop = false;
+            this.gbReportesFinancieros.Text = "Reportes financieros";
+            this.gbReportesFinancieros.UseCompatibleTextRendering = true;
+            // 
+            // cmbEEFF
+            // 
+            this.cmbEEFF.AutoCompleteCustomSource.AddRange(new string[] {
+            "Mascota",
+            "Servicio-tematica",
+            "Fechas-Ingreso",
+            "Servicio-tipo-habitacion"});
+            this.cmbEEFF.FormattingEnabled = true;
+            this.cmbEEFF.Items.AddRange(new object[] {
+            "E.F.E.",
+            "E.R.",
+            "E.S.F."});
+            this.cmbEEFF.Location = new System.Drawing.Point(175, 27);
+            this.cmbEEFF.Name = "cmbEEFF";
+            this.cmbEEFF.Size = new System.Drawing.Size(141, 21);
+            this.cmbEEFF.TabIndex = 55;
+            // 
+            // txtFecha2EEFF
+            // 
+            this.txtFecha2EEFF.Location = new System.Drawing.Point(412, 73);
+            this.txtFecha2EEFF.MaxLength = 10;
+            this.txtFecha2EEFF.Name = "txtFecha2EEFF";
+            this.txtFecha2EEFF.Size = new System.Drawing.Size(100, 20);
+            this.txtFecha2EEFF.TabIndex = 55;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.Location = new System.Drawing.Point(44, 28);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(115, 16);
+            this.label58.TabIndex = 56;
+            this.label58.Text = "Estado financiero:";
+            // 
+            // txtFecha1EEFF
+            // 
+            this.txtFecha1EEFF.Location = new System.Drawing.Point(259, 73);
+            this.txtFecha1EEFF.MaxLength = 10;
+            this.txtFecha1EEFF.Name = "txtFecha1EEFF";
+            this.txtFecha1EEFF.Size = new System.Drawing.Size(100, 20);
+            this.txtFecha1EEFF.TabIndex = 54;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.Location = new System.Drawing.Point(365, 74);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(41, 16);
+            this.label54.TabIndex = 53;
+            this.label54.Text = "hasta";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Location = new System.Drawing.Point(44, 74);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(209, 16);
+            this.label57.TabIndex = 52;
+            this.label57.Text = "Reportar estado financiero desde";
+            // 
+            // gbFechaFacturacion
+            // 
+            this.gbFechaFacturacion.Controls.Add(this.txtMesFin);
+            this.gbFechaFacturacion.Controls.Add(this.txtMesInicio);
+            this.gbFechaFacturacion.Controls.Add(this.label42);
+            this.gbFechaFacturacion.Controls.Add(this.label56);
+            this.gbFechaFacturacion.Location = new System.Drawing.Point(7, 64);
+            this.gbFechaFacturacion.Name = "gbFechaFacturacion";
+            this.gbFechaFacturacion.Size = new System.Drawing.Size(597, 129);
+            this.gbFechaFacturacion.TabIndex = 54;
+            this.gbFechaFacturacion.TabStop = false;
+            this.gbFechaFacturacion.Text = "Fecha de facturacion";
+            this.gbFechaFacturacion.UseCompatibleTextRendering = true;
+            // 
+            // txtMesFin
+            // 
+            this.txtMesFin.Location = new System.Drawing.Point(431, 52);
+            this.txtMesFin.Name = "txtMesFin";
+            this.txtMesFin.Size = new System.Drawing.Size(100, 20);
+            this.txtMesFin.TabIndex = 55;
+            // 
+            // txtMesInicio
+            // 
+            this.txtMesInicio.Location = new System.Drawing.Point(278, 52);
+            this.txtMesInicio.Name = "txtMesInicio";
+            this.txtMesInicio.Size = new System.Drawing.Size(100, 20);
+            this.txtMesInicio.TabIndex = 54;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(384, 53);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(41, 16);
+            this.label42.TabIndex = 53;
+            this.label42.Text = "hasta";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.Location = new System.Drawing.Point(51, 53);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(229, 16);
+            this.label56.TabIndex = 52;
+            this.label56.Text = "Reportar fecha de facturación desde ";
+            // 
+            // gbClientesMascota
+            // 
+            this.gbClientesMascota.Controls.Add(this.label55);
+            this.gbClientesMascota.Controls.Add(this.lblClientConM);
+            this.gbClientesMascota.Controls.Add(this.label52);
+            this.gbClientesMascota.Controls.Add(this.lblClientSinM);
+            this.gbClientesMascota.Location = new System.Drawing.Point(7, 63);
+            this.gbClientesMascota.Name = "gbClientesMascota";
+            this.gbClientesMascota.Size = new System.Drawing.Size(597, 129);
+            this.gbClientesMascota.TabIndex = 53;
+            this.gbClientesMascota.TabStop = false;
+            this.gbClientesMascota.Text = "Clientes-Mascota";
+            this.gbClientesMascota.UseCompatibleTextRendering = true;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.Location = new System.Drawing.Point(63, 84);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(222, 16);
+            this.label55.TabIndex = 53;
+            this.label55.Text = "Cantidad de Clientes con mascotas:";
+            // 
+            // lblClientConM
+            // 
+            this.lblClientConM.AutoSize = true;
+            this.lblClientConM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClientConM.Location = new System.Drawing.Point(291, 84);
+            this.lblClientConM.Name = "lblClientConM";
+            this.lblClientConM.Size = new System.Drawing.Size(12, 16);
+            this.lblClientConM.TabIndex = 52;
+            this.lblClientConM.Text = "-";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.Location = new System.Drawing.Point(63, 47);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(217, 16);
+            this.label52.TabIndex = 52;
+            this.label52.Text = "Cantidad de Clientes sin mascotas:";
+            // 
+            // lblClientSinM
+            // 
+            this.lblClientSinM.AutoSize = true;
+            this.lblClientSinM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClientSinM.Location = new System.Drawing.Point(291, 47);
+            this.lblClientSinM.Name = "lblClientSinM";
+            this.lblClientSinM.Size = new System.Drawing.Size(12, 16);
+            this.lblClientSinM.TabIndex = 51;
+            this.lblClientSinM.Text = "-";
             // 
             // gbReporteMascota
             // 
@@ -1963,7 +2167,8 @@ namespace Presentacion
             "Fechas-Ingreso",
             "Servicio-tipo-habitacion",
             "Clientes-Mascota",
-            "Fecha de facturacion"});
+            "Fecha de facturacion",
+            "E.E.F.F."});
             this.cmbtiporeporte.Location = new System.Drawing.Point(140, 24);
             this.cmbtiporeporte.Name = "cmbtiporeporte";
             this.cmbtiporeporte.Size = new System.Drawing.Size(141, 21);
@@ -2003,116 +2208,14 @@ namespace Presentacion
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // gbClientesMascota
-            // 
-            this.gbClientesMascota.Controls.Add(this.label55);
-            this.gbClientesMascota.Controls.Add(this.lblClientConM);
-            this.gbClientesMascota.Controls.Add(this.label52);
-            this.gbClientesMascota.Controls.Add(this.lblClientSinM);
-            this.gbClientesMascota.Location = new System.Drawing.Point(7, 63);
-            this.gbClientesMascota.Name = "gbClientesMascota";
-            this.gbClientesMascota.Size = new System.Drawing.Size(597, 129);
-            this.gbClientesMascota.TabIndex = 53;
-            this.gbClientesMascota.TabStop = false;
-            this.gbClientesMascota.Text = "Clientes-Mascota";
-            this.gbClientesMascota.UseCompatibleTextRendering = true;
-            // 
-            // lblClientConM
-            // 
-            this.lblClientConM.AutoSize = true;
-            this.lblClientConM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientConM.Location = new System.Drawing.Point(291, 84);
-            this.lblClientConM.Name = "lblClientConM";
-            this.lblClientConM.Size = new System.Drawing.Size(12, 16);
-            this.lblClientConM.TabIndex = 52;
-            this.lblClientConM.Text = "-";
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(63, 47);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(217, 16);
-            this.label52.TabIndex = 52;
-            this.label52.Text = "Cantidad de Clientes sin mascotas:";
-            // 
-            // lblClientSinM
-            // 
-            this.lblClientSinM.AutoSize = true;
-            this.lblClientSinM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientSinM.Location = new System.Drawing.Point(291, 47);
-            this.lblClientSinM.Name = "lblClientSinM";
-            this.lblClientSinM.Size = new System.Drawing.Size(12, 16);
-            this.lblClientSinM.TabIndex = 51;
-            this.lblClientSinM.Text = "-";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.Location = new System.Drawing.Point(63, 84);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(222, 16);
-            this.label55.TabIndex = 53;
-            this.label55.Text = "Cantidad de Clientes con mascotas:";
-            // 
-            // gbFechaFacturacion
-            // 
-            this.gbFechaFacturacion.Controls.Add(this.txtMesFin);
-            this.gbFechaFacturacion.Controls.Add(this.txtMesInicio);
-            this.gbFechaFacturacion.Controls.Add(this.label42);
-            this.gbFechaFacturacion.Controls.Add(this.label56);
-            this.gbFechaFacturacion.Location = new System.Drawing.Point(7, 64);
-            this.gbFechaFacturacion.Name = "gbFechaFacturacion";
-            this.gbFechaFacturacion.Size = new System.Drawing.Size(597, 129);
-            this.gbFechaFacturacion.TabIndex = 54;
-            this.gbFechaFacturacion.TabStop = false;
-            this.gbFechaFacturacion.Text = "Fecha de facturacion";
-            this.gbFechaFacturacion.UseCompatibleTextRendering = true;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.Location = new System.Drawing.Point(51, 53);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(229, 16);
-            this.label56.TabIndex = 52;
-            this.label56.Text = "Reportar fecha de facturación desde ";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(384, 53);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(41, 16);
-            this.label42.TabIndex = 53;
-            this.label42.Text = "hasta";
-            // 
-            // txtMesInicio
-            // 
-            this.txtMesInicio.Location = new System.Drawing.Point(278, 52);
-            this.txtMesInicio.Name = "txtMesInicio";
-            this.txtMesInicio.Size = new System.Drawing.Size(100, 20);
-            this.txtMesInicio.TabIndex = 54;
-            // 
-            // txtMesFin
-            // 
-            this.txtMesFin.Location = new System.Drawing.Point(431, 52);
-            this.txtMesFin.Name = "txtMesFin";
-            this.txtMesFin.Size = new System.Drawing.Size(100, 20);
-            this.txtMesFin.TabIndex = 55;
-            // 
             // Administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 454);
-            this.Controls.Add(this.gbReporte);
-            this.Controls.Add(this.gbER);
             this.Controls.Add(this.gbESF);
+            this.Controls.Add(this.gbER);
+            this.Controls.Add(this.gbReporte);
             this.Controls.Add(this.gbEFE);
             this.Controls.Add(this.gbMascotas);
             this.Controls.Add(this.gbUsuarios);
@@ -2143,6 +2246,12 @@ namespace Presentacion
             ((System.ComponentModel.ISupportInitialize)(this.dgvESF)).EndInit();
             this.gbReporte.ResumeLayout(false);
             this.gbReporte.PerformLayout();
+            this.gbReportesFinancieros.ResumeLayout(false);
+            this.gbReportesFinancieros.PerformLayout();
+            this.gbFechaFacturacion.ResumeLayout(false);
+            this.gbFechaFacturacion.PerformLayout();
+            this.gbClientesMascota.ResumeLayout(false);
+            this.gbClientesMascota.PerformLayout();
             this.gbReporteMascota.ResumeLayout(false);
             this.gbReporteMascota.PerformLayout();
             this.gbTematica.ResumeLayout(false);
@@ -2152,10 +2261,6 @@ namespace Presentacion
             this.gbtipohabitacion.ResumeLayout(false);
             this.gbtipohabitacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportes)).EndInit();
-            this.gbClientesMascota.ResumeLayout(false);
-            this.gbClientesMascota.PerformLayout();
-            this.gbFechaFacturacion.ResumeLayout(false);
-            this.gbFechaFacturacion.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2326,6 +2431,13 @@ namespace Presentacion
         private System.Windows.Forms.TextBox txtMesFin;
         private System.Windows.Forms.TextBox txtMesInicio;
         private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.GroupBox gbReportesFinancieros;
+        private System.Windows.Forms.ComboBox cmbEEFF;
+        private System.Windows.Forms.TextBox txtFecha2EEFF;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.TextBox txtFecha1EEFF;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label57;
     }
 }
 

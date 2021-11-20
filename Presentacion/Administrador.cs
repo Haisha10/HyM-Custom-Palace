@@ -41,7 +41,15 @@ namespace Presentacion
             this.BackgroundImage = img;
             this.BackgroundImageLayout = ImageLayout.Stretch;
             OcultarGroupBoxs();
-            
+            OcultarReportes();
+
+            gbReporteMascota.ForeColor = SystemColors.ControlLightLight;
+            gbTematica.ForeColor = SystemColors.ControlLightLight;
+            gbIntervalofecha.ForeColor = SystemColors.ControlLightLight;
+            gbtipohabitacion.ForeColor = SystemColors.ControlLightLight;
+            gbClientesMascota.ForeColor = SystemColors.ControlLightLight;
+            gbFechaFacturacion.ForeColor = SystemColors.ControlLightLight;
+            gbReportesFinancieros.ForeColor = SystemColors.ControlLightLight;
         }
         private void OcultarGroupBoxs()
         {
@@ -411,7 +419,7 @@ namespace Presentacion
         {
             if (txtFechaRegistroER.Text != "" && txtIRER.Text != "" && txtOtrosGaeInER.Text != "" && txtCostoVentasER.Text != "" && txtUtiNetaER.Text != "" && txtVentasER.Text != "" && txtUtiBrutaER.Text != "" && txtUtiOperativaER.Text != "")
             {
-                nER.Insertar_ER(Convert.ToDateTime(txtFechaRegistroER.Text.Trim()), Convert.ToDecimal(txtVentasER.Text.Trim()), Convert.ToDecimal(txtCostoVentasER.Text.Trim()), Convert.ToDecimal(txtUtiBrutaER.Text.Trim()), Convert.ToDecimal(txtOtrosGaeInER.Text.Trim()), Convert.ToDecimal(txtUtiOperativaER.Text.Trim()), Convert.ToDecimal(txtIRER.Text.Trim()), Convert.ToDecimal(txtUtiNetaER.Text.Trim()));
+                nER.Insertar_ER(Convert.ToDateTime(txtFechaRegistroER.Text.Trim()), Convert.ToDecimal(txtVentasER.Text.Trim()), Convert.ToDecimal(txtCostoVentasER.Text.Trim()), Convert.ToDecimal(txtUtiBrutaER.Text.Trim()), Convert.ToDecimal(txtOtrosGaeInER.Text.Trim()), Convert.ToDecimal(txtUtiOperativaER.Text.Trim()), Convert.ToDecimal(txtIRER.Text), Convert.ToDecimal(txtUtiNetaER.Text.Trim()));
                 Mostrar_ER();
                 LimpiarControlesER();
             }
@@ -431,7 +439,7 @@ namespace Presentacion
                     if (!dgvER.SelectedRows[0].IsNewRow)
                     {
                         int codigo = Convert.ToInt32(dgvER.SelectedRows[0].Cells[0].Value);
-                        nER.Modificar_ER(codigo, Convert.ToDateTime(txtFechaRegistroER.Text.Trim()), Convert.ToDecimal(txtVentasER.Text.Trim()), Convert.ToDecimal(txtCostoVentasER.Text.Trim()), Convert.ToDecimal(txtUtiBrutaER.Text.Trim()), Convert.ToDecimal(txtOtrosGaeInER.Text.Trim()), Convert.ToDecimal(txtUtiOperativaER.Text.Trim()), Convert.ToDecimal(txtIRER.Text.Trim()), Convert.ToDecimal(txtUtiNetaER.Text.Trim()));
+                        nER.Modificar_ER(codigo, Convert.ToDateTime(txtFechaRegistroER.Text.Trim()), Convert.ToDecimal(txtVentasER.Text.Trim()), Convert.ToDecimal(txtCostoVentasER.Text.Trim()), Convert.ToDecimal(txtUtiBrutaER.Text.Trim()), Convert.ToDecimal(txtOtrosGaeInER.Text.Trim()), Convert.ToDecimal(txtUtiOperativaER.Text.Trim()), Convert.ToDecimal(txtIRER.Text), Convert.ToDecimal(txtUtiNetaER.Text.Trim()));
                         Mostrar_ER();
                         LimpiarControlesER();
                     }
@@ -475,7 +483,8 @@ namespace Presentacion
             txtFechaRegistroER.Clear();
             txtIRER.Clear();
             txtCostoVentasER.Clear();
-            
+            txtUtiBrutaER.Clear();
+            txtUtiOperativaER.Clear();
             txtUtiNetaER.Clear();
             txtUtiOperativaER.Clear();
             txtVentasER.Clear();
@@ -500,7 +509,7 @@ namespace Presentacion
         {
             if (txtFechaRegistroESF.Text != "" && txtActivoCorrienteESF.Text != "" && txtActivoNoCorrienteESF.Text != "" && txtPasivoCorrienteESF.Text != "" && txtPasivoNoCorrienteESF.Text != "" && txtPatrimonioESF.Text != "" && txtTotalActivoESF.Text != "" && txtTotalPasyPatrESF.Text != "")
             {
-                nESF.Insertar_ESF(Convert.ToDateTime(txtFechaRegistroESF.Text.Trim()), Convert.ToDecimal(txtActivoCorrienteESF.Text.Trim()), Convert.ToDecimal(txtActivoNoCorrienteESF.Text.Trim()), Convert.ToDecimal(txtTotalActivoESF.Text.Trim()), Convert.ToDecimal(txtPasivoCorrienteESF.Text.Trim()), Convert.ToDecimal(txtPasivoNoCorrienteESF.Text.Trim()), Convert.ToDecimal(txtPatrimonioESF.Text.Trim()), Convert.ToDecimal(txtTotalPasyPatrESF.Text.Trim()));
+                nESF.Insertar_ESF(Convert.ToDateTime(txtFechaRegistroESF.Text), Convert.ToDecimal(txtActivoCorrienteESF.Text), Convert.ToDecimal(txtActivoNoCorrienteESF.Text), Convert.ToDecimal(txtTotalActivoESF.Text), Convert.ToDecimal(txtPasivoCorrienteESF.Text), Convert.ToDecimal(txtPasivoNoCorrienteESF.Text), Convert.ToDecimal(txtPatrimonioESF.Text), Convert.ToDecimal(txtTotalPasyPatrESF.Text));
                 Mostrar_ESF();
                 LimpiarControlesESF();
             }
@@ -581,59 +590,58 @@ namespace Presentacion
             
         }
 
-        private void txtVentasER_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-        }
 
         private void txtUtiBrutaER_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (e.KeyChar < 48 || e.KeyChar > 57)
             {
                 e.Handled = true;
+                return;
             }
         }
 
         private void txtUtiOperativaER_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (e.KeyChar < 48 || e.KeyChar > 57)
             {
                 e.Handled = true;
+                return;
             }
         }
 
         private void txtUtiNetaER_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (e.KeyChar < 48 || e.KeyChar > 57)
             {
                 e.Handled = true;
+                return;
             }
         }
 
         private void txtCostoVentasER_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (e.KeyChar < 48 || e.KeyChar > 57)
             {
                 e.Handled = true;
+                return;
             }
         }
 
         private void txtOtrosGaeInER_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if ((e.KeyChar >= 65 && e.KeyChar <= 90)||(e.KeyChar >= 97 && e.KeyChar <= 122)) 
             {
                 e.Handled = true;
+                return;
             }
         }
 
         private void txtIRER_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (e.KeyChar < 48 || e.KeyChar > 57)
             {
                 e.Handled = true;
+                return;
             }
         }
 
@@ -644,41 +652,46 @@ namespace Presentacion
 
         private void txtActivoCorrienteESF_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (e.KeyChar < 48 || e.KeyChar > 57)
             {
                 e.Handled = true;
+                return;
             }
         }
 
         private void txtActivoNoCorrienteESF_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (e.KeyChar < 48 || e.KeyChar > 57)
             {
                 e.Handled = true;
+                return;
             }
         }
 
         private void txtPasivoCorrienteESF_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (e.KeyChar < 48 || e.KeyChar > 57)
             {
                 e.Handled = true;
+                return;
             }
         }
 
         private void txtPasivoNoCorrienteESF_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (e.KeyChar < 48 || e.KeyChar > 57)
             {
                 e.Handled = true;
+                return;
             }
         }
 
         private void txtPatrimonioESF_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (e.KeyChar < 48 || e.KeyChar > 57)
             {
                 e.Handled = true;
+                return;
             }
         }
 
@@ -689,31 +702,34 @@ namespace Presentacion
 
         private void txtAOperacion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (e.KeyChar < 48 || e.KeyChar > 57)
             {
                 e.Handled = true;
+                return;
             }
         }
 
         private void txtAInversion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (e.KeyChar < 48 || e.KeyChar > 57)
             {
                 e.Handled = true;
+                return;
             }
         }
 
         private void txtAFinanciacion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (e.KeyChar < 48 || e.KeyChar > 57)
             {
                 e.Handled = true;
+                return;
             }
         }
 
         private void txtUtiBrutaER_TextChanged(object sender, EventArgs e)
         {
-            if (txtVentasER.Text != "" && txtCostoVentasER.Text != Text)
+            if (txtVentasER.Text != "" && txtCostoVentasER.Text != "")
             {
                 txtUtiBrutaER.Text = (Convert.ToInt32(txtVentasER.Text) - Convert.ToInt32(txtCostoVentasER.Text)).ToString();
             }
@@ -736,13 +752,8 @@ namespace Presentacion
             OcultarGroupBoxs();
             gbReporte.Enabled = true;
             gbReporte.Visible = true;
+            OcultarReportes();
             dgvReportes.ForeColor = SystemColors.WindowText;
-            gbFechaFacturacion.ForeColor = SystemColors.ControlLightLight;
-            gbClientesMascota.ForeColor = SystemColors.ControlLightLight;
-            gbtipohabitacion.ForeColor = SystemColors.ControlLightLight;
-            gbIntervalofecha.ForeColor = SystemColors.ControlLightLight;
-            gbTematica.ForeColor = SystemColors.ControlLightLight;
-            gbReporteMascota.ForeColor = SystemColors.ControlLightLight;
         }
 
         private void OcultarReportes()
@@ -759,130 +770,178 @@ namespace Presentacion
             gbClientesMascota.Visible = false;
             gbFechaFacturacion.Enabled = false;
             gbFechaFacturacion.Visible = false;
+            gbReportesFinancieros.Enabled = false;
+            gbReportesFinancieros.Visible = false;
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            if (cmbtiporeporte.SelectedItem.ToString() == "Mascota")
+            if (cmbtiporeporte.SelectedItem != null) 
             {
-                OcultarReportes();
-                gbReporteMascota.Enabled = true;
-                gbReporteMascota.Visible = true;
+                if (cmbtiporeporte.SelectedItem.ToString() == "Mascota")
+                {
+                    OcultarReportes();
+                    gbReporteMascota.Enabled = true;
+                    gbReporteMascota.Visible = true;
 
-                if (txtTipoMascota.Text != "")
-                {
-                    dgvReportes.AutoGenerateColumns = true;
-                    bindingSource.DataSource = gMascota.ConsultarTipoMascota(txtTipoMascota.Text.Trim());
-                    dgvReportes.DataSource = bindingSource;
-                    if (dgvReportes.Rows.Count == 0)
+                    if (txtTipoMascota.Text != "")
                     {
-                        MessageBox.Show("No hay datos");
-                    }
-                    lbltipomascota.Text = txtTipoMascota.Text.Trim();
-                    lblcantidad.Text = gMascota.ConsultarTipoMascota(txtTipoMascota.Text.Trim()).Count.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Inserte tipo de mascota");
-                }
-            }
-            else if (cmbtiporeporte.SelectedItem.ToString() == "Servicio-tematica")
-            {
-                OcultarReportes();
-                gbTematica.Enabled = true;
-                gbTematica.Visible = true;
-
-                if (txttipotematica.Text != "")
-                {
-                    dgvReportes.AutoGenerateColumns = true;
-                    bindingSource1.DataSource = gServicio.TipoTematica(txttipotematica.Text.Trim());
-                    dgvReportes.DataSource = bindingSource1;
-                    if (dgvReportes.Rows.Count == 0)
-                    {
-                        MessageBox.Show("No hay datos");
+                        dgvReportes.AutoGenerateColumns = true;
+                        bindingSource.DataSource = gMascota.ConsultarTipoMascota(txtTipoMascota.Text.Trim());
+                        dgvReportes.DataSource = bindingSource;
+                        if (dgvReportes.Rows.Count == 0)
+                        {
+                            MessageBox.Show("No hay datos");
+                        }
+                        lbltipomascota.Text = txtTipoMascota.Text.Trim();
+                        lblcantidad.Text = gMascota.ConsultarTipoMascota(txtTipoMascota.Text.Trim()).Count.ToString();
                     }
                     else
                     {
-                        lblcantidadtematica.Text = gServicio.TipoTematica(txttipotematica.Text.Trim()).Rows.Count.ToString();
-                        lbltipohabitacion.Text = txttipotematica.Text.Trim();
+                        MessageBox.Show("Inserte tipo de mascota");
                     }
                 }
-                else
+                else if (cmbtiporeporte.SelectedItem.ToString() == "Servicio-tematica")
                 {
-                    MessageBox.Show("Ingrese un tipo de temática");
-                }
-            }
-            else if (cmbtiporeporte.SelectedItem.ToString() == "Fechas-Ingreso")
-            {
-                OcultarReportes();
-                gbIntervalofecha.Enabled = true;
-                gbIntervalofecha.Visible = true;
+                    OcultarReportes();
+                    gbTematica.Enabled = true;
+                    gbTematica.Visible = true;
 
-                dgvReportes.AutoGenerateColumns = true;
-                bindingSource2.DataSource = gServicio.IntervaloFecha(Convert.ToDateTime(txtfecha1.Text.Trim()), Convert.ToDateTime(txtfecha2.Text.Trim()));
-                dgvReportes.DataSource = bindingSource2;
-                if (dgvReportes.Rows.Count == 0)
-                {
-                    MessageBox.Show("No hay datos");
+                    if (txttipotematica.Text != "")
+                    {
+                        dgvReportes.AutoGenerateColumns = true;
+                        bindingSource1.DataSource = gServicio.TipoTematica(txttipotematica.Text.Trim());
+                        dgvReportes.DataSource = bindingSource1;
+                        if (dgvReportes.Rows.Count == 0)
+                        {
+                            MessageBox.Show("No hay datos");
+                        }
+                        else
+                        {
+                            lblcantidadtematica.Text = gServicio.TipoTematica(txttipotematica.Text.Trim()).Rows.Count.ToString();
+                            lbltipohabitacion.Text = txttipotematica.Text.Trim();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese un tipo de temática");
+                    }
                 }
-            }
-            else if (cmbtiporeporte.SelectedItem.ToString() == "Servicio-tipo-habitacion")
-            {
-                OcultarReportes();
-                gbtipohabitacion.Enabled = true;
-                gbtipohabitacion.Visible = true;
-
-                if (cmbTipoHabitacion.SelectedIndex != -1)
+                else if (cmbtiporeporte.SelectedItem.ToString() == "Fechas-Ingreso")
                 {
+                    OcultarReportes();
+                    gbIntervalofecha.Enabled = true;
+                    gbIntervalofecha.Visible = true;
+
                     dgvReportes.AutoGenerateColumns = true;
-                    bindingSource2.DataSource = gServicio.tipoHabitacion(cmbTipoHabitacion.SelectedItem.ToString());
+                    bindingSource2.DataSource = gServicio.IntervaloFecha(Convert.ToDateTime(txtfecha1.Text.Trim()), Convert.ToDateTime(txtfecha2.Text.Trim()));
                     dgvReportes.DataSource = bindingSource2;
                     if (dgvReportes.Rows.Count == 0)
                     {
                         MessageBox.Show("No hay datos");
                     }
+                }
+                else if (cmbtiporeporte.SelectedItem.ToString() == "Servicio-tipo-habitacion")
+                {
+                    OcultarReportes();
+                    gbtipohabitacion.Enabled = true;
+                    gbtipohabitacion.Visible = true;
+
+                    if (cmbTipoHabitacion.SelectedIndex != -1)
+                    {
+                        dgvReportes.AutoGenerateColumns = true;
+                        bindingSource2.DataSource = gServicio.tipoHabitacion(cmbTipoHabitacion.SelectedItem.ToString());
+                        dgvReportes.DataSource = bindingSource2;
+                        if (dgvReportes.Rows.Count == 0)
+                        {
+                            MessageBox.Show("No hay datos");
+                        }
+                        else
+                        {
+                            lblcantidadtipohabitacion.Text = gServicio.tipoHabitacion(cmbTipoHabitacion.SelectedItem.ToString()).Rows.Count.ToString();
+                            lbltipo.Text = cmbTipoHabitacion.SelectedItem.ToString();
+                        }
+                    }
                     else
                     {
-                        lblcantidadtipohabitacion.Text = gServicio.tipoHabitacion(cmbTipoHabitacion.SelectedItem.ToString()).Rows.Count.ToString();
-                        lbltipo.Text = cmbTipoHabitacion.SelectedItem.ToString();
+                        MessageBox.Show("Seleccione un tipo de habitación");
                     }
                 }
-                else
+                else if (cmbtiporeporte.SelectedItem.ToString() == "Clientes-Mascota")
                 {
-                    MessageBox.Show("Seleccione un tipo de habitación");
+                    OcultarReportes();
+                    gbClientesMascota.Enabled = true;
+                    gbClientesMascota.Visible = true;
+
+                    int clientConM = gMascota.ListarMascota().Count();
+                    int clientSinM = gCliente.ListarCliente().Count() - gMascota.ListarMascota().Count();
+                    lblClientSinM.Text = Convert.ToString(clientSinM);
+                    lblClientConM.Text = Convert.ToString(clientConM);
+                    dgvReportes.DataSource = gCliente.ListarCliente();
                 }
-            }
-            else if(cmbtiporeporte.SelectedItem.ToString() == "Clientes-Mascota")
-            {
-                OcultarReportes();
-                gbClientesMascota.Enabled = true;
-                gbClientesMascota.Visible = true;
-
-                int clientConM = gMascota.ListarMascota().Count();
-                int clientSinM = gCliente.ListarCliente().Count() - gMascota.ListarMascota().Count();
-                lblClientSinM.Text = Convert.ToString(clientSinM);
-                lblClientConM.Text = Convert.ToString(clientConM);
-                dgvReportes.DataSource = gCliente.ListarCliente();
-            }
-            else if(cmbtiporeporte.SelectedItem.ToString() == "Fecha de facturacion")
-            {
-                OcultarReportes();
-                gbFechaFacturacion.Enabled = true;
-                gbFechaFacturacion.Visible = true;
-
-                if (txtMesFin.Text != "" && txtMesInicio.Text != "")
+                else if (cmbtiporeporte.SelectedItem.ToString() == "Fecha de facturacion")
                 {
-                    dgvReportes.DataSource = gServicio.Buscar_Servicios_en_Rango_Mes(DateTime.Parse(txtMesInicio.Text), DateTime.Parse(txtMesFin.Text));
-                    if (dgvReportes.Rows.Count == 0)
+                    OcultarReportes();
+                    gbFechaFacturacion.Enabled = true;
+                    gbFechaFacturacion.Visible = true;
+
+                    if (txtMesFin.Text != "" && txtMesInicio.Text != "")
                     {
-                        MessageBox.Show("No hay datos");
+                        dgvReportes.DataSource = gServicio.Buscar_Servicios_en_Rango_Mes(DateTime.Parse(txtMesInicio.Text), DateTime.Parse(txtMesFin.Text));
+                        if (dgvReportes.Rows.Count == 0)
+                        {
+                            MessageBox.Show("No hay datos");
 
+                        }
+                    }
+                    else
+                        MessageBox.Show("¡Rellene las fechas!");
+                }
+                else if (cmbtiporeporte.SelectedItem.ToString() == "E.E.F.F.")
+                {
+                    OcultarReportes();
+                    gbReportesFinancieros.Enabled = true;
+                    gbReportesFinancieros.Visible = true;
+
+                    if (cmbEEFF.SelectedItem != null)
+                    {
+                        if (txtFecha1EEFF.Text != "" && txtFecha2EEFF.Text != "")
+                        {
+                            DateTime fecha1 = Convert.ToDateTime(txtFecha1EEFF.Text);
+                            DateTime fecha2 = Convert.ToDateTime(txtFecha2EEFF.Text);
+                            if (cmbEEFF.SelectedItem.ToString() == "E.F.E.")
+                            {
+                                dgvReportes.DataSource = nEFE.MostrarxFechaEFE(fecha1, fecha2);
+                            }
+                            else if (cmbEEFF.SelectedItem.ToString() == "E.R.")
+                            {
+                                dgvReportes.DataSource = nER.MostrarxFechaER(fecha1, fecha2);
+                            }
+                            else if (cmbEEFF.SelectedItem.ToString() == "E.S.F.")
+                            {
+                                dgvReportes.DataSource = nESF.MostrarxFechaESF(fecha1, fecha2);
+                            }
+                            cmbEEFF.SelectedIndex = -1;
+                            txtFecha1EEFF.Clear();
+                            txtFecha2EEFF.Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("¡Digite las fechas!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("¡Seleccione un reporte!");
                     }
                 }
-                else
-                    MessageBox.Show("¡Rellene las fechas!");
+            }
+            else
+            {
+                MessageBox.Show("¡Seleccione una opción!");
             }
             
+
         }
 
         private void cmbtiporeporte_SelectedIndexChanged(object sender, EventArgs e)
@@ -923,6 +982,81 @@ namespace Presentacion
                 gbFechaFacturacion.Enabled = true;
                 gbFechaFacturacion.Visible = true;
             }
+            else if (cmbtiporeporte.SelectedItem.ToString() == "E.E.F.F.")
+            {
+                OcultarReportes();
+                gbReportesFinancieros.Enabled = true;
+                gbReportesFinancieros.Visible = true;
+            }
+        }
+
+        private void txtUtiOperativaER_TextChanged(object sender, EventArgs e)
+        {
+            if (txtUtiBrutaER.Text != "" && txtOtrosGaeInER.Text != "")
+            {
+                txtUtiOperativaER.Text = (Convert.ToInt32(txtUtiBrutaER.Text) - Convert.ToInt32(txtOtrosGaeInER.Text)).ToString();
+            }
+        }
+
+        private void txtOtrosGaeInER_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtUtiBrutaER.Text != "" && txtOtrosGaeInER.Text != "")
+            {
+
+                  txtUtiOperativaER.Text = (Convert.ToInt32(txtUtiBrutaER.Text) - Convert.ToInt32(txtOtrosGaeInER.Text)).ToString();
+  
+            }
+            if (txtUtiOperativaER.Text != "")
+            {
+                txtIRER.Text = (Convert.ToInt32(txtUtiOperativaER.Text) * 0.295).ToString();
+            }
+            if (txtIRER.Text != "")
+            {
+                txtUtiNetaER.Text = (Convert.ToInt32(txtUtiOperativaER.Text) -Convert.ToInt32(Math.Round(Convert.ToDouble(txtIRER.Text),MidpointRounding.AwayFromZero))).ToString();
+            }
+        }
+
+        private void txtOtrosGaeInER_KeyPress(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCostoVentasER_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(txtCostoVentasER.Text!=""&&txtVentasER.Text!="")
+            {
+                txtUtiBrutaER.Text = (Convert.ToInt32(txtVentasER.Text) - Convert.ToInt32(txtCostoVentasER.Text)).ToString();
+            }
+        }
+
+        private void txtActivoNoCorrienteESF_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(txtActivoCorrienteESF.Text!=""&&txtActivoNoCorrienteESF.Text!="")
+            {
+                txtTotalActivoESF.Text = (Convert.ToInt32(txtActivoCorrienteESF.Text) + Convert.ToInt32(txtActivoNoCorrienteESF.Text)).ToString();
+            }
+
+        }
+
+        private void txtPasivoCorrienteESF_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtPasivoNoCorrienteESF.Text != "" && txtPasivoCorrienteESF.Text != "" && txtPatrimonioESF.Text!="")
+            {
+                txtTotalPasyPatrESF.Text = (Convert.ToInt32(txtPasivoCorrienteESF.Text) + Convert.ToInt32(txtPasivoNoCorrienteESF.Text) + Convert.ToInt32(txtPatrimonioESF.Text)).ToString();
+            }
+        }
+
+        private void txtAOperacion_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtAInversion.Text != "" && txtAFinanciacion.Text != "" && txtAOperacion.Text !="")
+            {
+                txtEfectEquiv.Text = (Convert.ToInt32(txtAFinanciacion.Text)- Convert.ToInt32(txtAInversion.Text) + Convert.ToInt32(txtAOperacion.Text)).ToString();
+            }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

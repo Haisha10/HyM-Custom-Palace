@@ -25,7 +25,8 @@ namespace Negocio
                 fechaRegistro = fechaRegistro,
                 actividadFinanciacion = actividadFinanciacion,
                 actividadInversion = actividadInversion,
-                actividadOperacion = actividadOperacion
+                actividadOperacion = actividadOperacion,
+                efectivoEquivalente = efectivoEquivalente,
             };
             dEFE.Insertar(eEFE);
         }
@@ -37,7 +38,8 @@ namespace Negocio
                 fechaRegistro = fechaRegistro,
                 actividadFinanciacion = actividadFinanciacion,
                 actividadInversion = actividadInversion,
-                actividadOperacion = actividadOperacion
+                actividadOperacion = actividadOperacion,
+                efectivoEquivalente = efectivoEquivalente,
             };
             dEFE.Modificar(eEFE);
         }
@@ -48,6 +50,11 @@ namespace Negocio
         public DataTable Listar_EFE()
         {
             return dEFE.ListarTodo();
+        }
+
+        public DataTable MostrarxFechaEFE(DateTime fecha1, DateTime fecha2)
+        {
+            return dEFE.Mostrar_xFecha(fecha1, fecha2);
         }
     }
 }

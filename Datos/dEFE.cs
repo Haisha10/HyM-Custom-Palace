@@ -105,5 +105,29 @@ namespace Datos
             }
             return table;
         }
+
+        public DataTable Mostrar_xFecha(DateTime fecha1, DateTime fecha2)
+        {
+            DataTable table = new DataTable();
+            try
+            {
+                SqlConnection con = db.ConectaDb();
+                SqlCommand cmd = new SqlCommand("MostrarxFechaEFE", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@fecha1", fecha1);
+                cmd.Parameters.AddWithValue("@fecha2", fecha2);
+                SqlDataReader reader = cmd.ExecuteReader();
+                table.Load(reader);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                db.DesconectaDb();
+            }
+            return table;
+        }
     }
 }

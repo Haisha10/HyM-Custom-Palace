@@ -57,5 +57,10 @@ namespace Negocio
         {
             return dER.ListarTodo();
         }
+
+        public DataTable MostrarxFechaER(DateTime fecha1, DateTime fecha2)
+        {
+            return dER.Mostrar_xFecha(fecha1, fecha2);
+        }
     }
 }

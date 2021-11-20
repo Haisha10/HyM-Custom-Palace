@@ -57,5 +57,10 @@ namespace Negocio
         {
             return dESF.ListarTodo();
         }
+
+        public DataTable MostrarxFechaESF(DateTime fecha1, DateTime fecha2)
+        {
+            return dESF.Mostrar_xFecha(fecha1, fecha2);
+        }
     }
 }
