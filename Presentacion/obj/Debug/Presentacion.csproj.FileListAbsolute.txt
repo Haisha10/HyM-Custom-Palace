@@ -165,3 +165,24 @@ C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\HyM Custom Palace\HyM-Custom-P
 C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\HyM Custom Palace\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
 C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\HyM Custom Palace\HyM-Custom-Palace\Presentacion\obj\Debug\HyP Custom Palace.exe
 C:\Users\USER\Desktop\Clases\Fundamentos de SI\TF\HyM Custom Palace\HyM-Custom-Palace\Presentacion\obj\Debug\HyP Custom Palace.pdb
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\bin\Debug\HyP Custom Palace.exe.config
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\bin\Debug\HyP Custom Palace.exe
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\bin\Debug\HyP Custom Palace.pdb
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\bin\Debug\Entidades.dll
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\bin\Debug\Negocio.dll
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\bin\Debug\Datos.dll
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\bin\Debug\Entidades.pdb
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\bin\Debug\Negocio.pdb
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\bin\Debug\Datos.pdb
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.Administrador.resources
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.Facturacion.resources
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.Huesped.resources
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.Login.resources
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\obj\Debug\HyP_Custom_Palace.Properties.Resources.resources
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.Recuperacion.resources
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\obj\Debug\HyP Custom Palace.exe
+C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\obj\Debug\HyP Custom Palace.pdb

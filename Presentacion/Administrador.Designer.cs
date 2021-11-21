@@ -157,8 +157,11 @@ namespace Presentacion
             this.label54 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.gbFechaFacturacion = new System.Windows.Forms.GroupBox();
+            this.label60 = new System.Windows.Forms.Label();
             this.txtMesFin = new System.Windows.Forms.TextBox();
+            this.lblCantFacturacion = new System.Windows.Forms.Label();
             this.txtMesInicio = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
             this.gbClientesMascota = new System.Windows.Forms.GroupBox();
@@ -183,6 +186,9 @@ namespace Presentacion
             this.txttipotematica = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
             this.gbIntervalofecha = new System.Windows.Forms.GroupBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.lblPersonasReportadas = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
             this.txtfecha2 = new System.Windows.Forms.TextBox();
             this.txtfecha1 = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -200,12 +206,6 @@ namespace Presentacion
             this.dgvReportes = new System.Windows.Forms.DataGridView();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label59 = new System.Windows.Forms.Label();
-            this.lblPersonasReportadas = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.lblCantFacturacion = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.gbUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
@@ -925,9 +925,9 @@ namespace Presentacion
             // 
             this.dgMascotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMascotas.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dgMascotas.Location = new System.Drawing.Point(17, 24);
+            this.dgMascotas.Location = new System.Drawing.Point(97, 23);
             this.dgMascotas.Name = "dgMascotas";
-            this.dgMascotas.Size = new System.Drawing.Size(582, 169);
+            this.dgMascotas.Size = new System.Drawing.Size(436, 167);
             this.dgMascotas.TabIndex = 0;
             this.dgMascotas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMascotas_CellClick);
             // 
@@ -950,7 +950,7 @@ namespace Presentacion
             this.gbEFE.Controls.Add(this.label19);
             this.gbEFE.Controls.Add(this.dgvEFE);
             this.gbEFE.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gbEFE.Location = new System.Drawing.Point(171, 12);
+            this.gbEFE.Location = new System.Drawing.Point(169, 13);
             this.gbEFE.Name = "gbEFE";
             this.gbEFE.Size = new System.Drawing.Size(617, 425);
             this.gbEFE.TabIndex = 8;
@@ -1151,7 +1151,7 @@ namespace Presentacion
             this.gbER.Controls.Add(this.F);
             this.gbER.Controls.Add(this.dgvER);
             this.gbER.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gbER.Location = new System.Drawing.Point(171, 14);
+            this.gbER.Location = new System.Drawing.Point(169, 14);
             this.gbER.Name = "gbER";
             this.gbER.Size = new System.Drawing.Size(617, 425);
             this.gbER.TabIndex = 16;
@@ -1420,7 +1420,7 @@ namespace Presentacion
             this.gbESF.Controls.Add(this.label36);
             this.gbESF.Controls.Add(this.dgvESF);
             this.gbESF.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gbESF.Location = new System.Drawing.Point(171, 13);
+            this.gbESF.Location = new System.Drawing.Point(169, 12);
             this.gbESF.Name = "gbESF";
             this.gbESF.Size = new System.Drawing.Size(618, 425);
             this.gbESF.TabIndex = 22;
@@ -1776,6 +1776,15 @@ namespace Presentacion
             this.gbFechaFacturacion.Text = "Fecha de facturacion";
             this.gbFechaFacturacion.UseCompatibleTextRendering = true;
             // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(179, 88);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(188, 13);
+            this.label60.TabIndex = 62;
+            this.label60.Text = "servicios en dicho intervalo de fechas.";
+            // 
             // txtMesFin
             // 
             this.txtMesFin.Location = new System.Drawing.Point(431, 52);
@@ -1783,12 +1792,30 @@ namespace Presentacion
             this.txtMesFin.Size = new System.Drawing.Size(100, 20);
             this.txtMesFin.TabIndex = 55;
             // 
+            // lblCantFacturacion
+            // 
+            this.lblCantFacturacion.AutoSize = true;
+            this.lblCantFacturacion.Location = new System.Drawing.Point(154, 90);
+            this.lblCantFacturacion.Name = "lblCantFacturacion";
+            this.lblCantFacturacion.Size = new System.Drawing.Size(10, 13);
+            this.lblCantFacturacion.TabIndex = 61;
+            this.lblCantFacturacion.Text = "-";
+            // 
             // txtMesInicio
             // 
             this.txtMesInicio.Location = new System.Drawing.Point(278, 52);
             this.txtMesInicio.Name = "txtMesInicio";
             this.txtMesInicio.Size = new System.Drawing.Size(100, 20);
             this.txtMesInicio.TabIndex = 54;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(51, 90);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(97, 13);
+            this.label63.TabIndex = 60;
+            this.label63.Text = "En total se registró ";
             // 
             // label42
             // 
@@ -2047,6 +2074,33 @@ namespace Presentacion
             this.gbIntervalofecha.TabStop = false;
             this.gbIntervalofecha.Text = "Intervalo de fechas";
             // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(107, 91);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(178, 13);
+            this.label61.TabIndex = 59;
+            this.label61.Text = "clientes en dicho intervalo de fecha.";
+            // 
+            // lblPersonasReportadas
+            // 
+            this.lblPersonasReportadas.AutoSize = true;
+            this.lblPersonasReportadas.Location = new System.Drawing.Point(86, 91);
+            this.lblPersonasReportadas.Name = "lblPersonasReportadas";
+            this.lblPersonasReportadas.Size = new System.Drawing.Size(10, 13);
+            this.lblPersonasReportadas.TabIndex = 58;
+            this.lblPersonasReportadas.Text = "-";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(9, 91);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(74, 13);
+            this.label59.TabIndex = 57;
+            this.label59.Text = "Se reportaron ";
+            // 
             // txtfecha2
             // 
             this.txtfecha2.Location = new System.Drawing.Point(376, 44);
@@ -2223,69 +2277,15 @@ namespace Presentacion
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(9, 91);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(74, 13);
-            this.label59.TabIndex = 57;
-            this.label59.Text = "Se reportaron ";
-            // 
-            // lblPersonasReportadas
-            // 
-            this.lblPersonasReportadas.AutoSize = true;
-            this.lblPersonasReportadas.Location = new System.Drawing.Point(86, 91);
-            this.lblPersonasReportadas.Name = "lblPersonasReportadas";
-            this.lblPersonasReportadas.Size = new System.Drawing.Size(10, 13);
-            this.lblPersonasReportadas.TabIndex = 58;
-            this.lblPersonasReportadas.Text = "-";
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(107, 91);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(178, 13);
-            this.label61.TabIndex = 59;
-            this.label61.Text = "clientes en dicho intervalo de fecha.";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(179, 88);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(188, 13);
-            this.label60.TabIndex = 62;
-            this.label60.Text = "servicios en dicho intervalo de fechas.";
-            // 
-            // lblCantFacturacion
-            // 
-            this.lblCantFacturacion.AutoSize = true;
-            this.lblCantFacturacion.Location = new System.Drawing.Point(154, 90);
-            this.lblCantFacturacion.Name = "lblCantFacturacion";
-            this.lblCantFacturacion.Size = new System.Drawing.Size(10, 13);
-            this.lblCantFacturacion.TabIndex = 61;
-            this.lblCantFacturacion.Text = "-";
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(51, 90);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(97, 13);
-            this.label63.TabIndex = 60;
-            this.label63.Text = "En total se registró ";
-            // 
             // Administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 454);
-            this.Controls.Add(this.gbReporte);
-            this.Controls.Add(this.gbESF);
             this.Controls.Add(this.gbER);
             this.Controls.Add(this.gbEFE);
+            this.Controls.Add(this.gbESF);
+            this.Controls.Add(this.gbReporte);
             this.Controls.Add(this.gbMascotas);
             this.Controls.Add(this.gbUsuarios);
             this.Controls.Add(this.groupBox1);

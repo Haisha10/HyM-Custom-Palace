@@ -690,15 +690,25 @@ namespace Presentacion
 
                     if (txtTipoMascota.Text != "")
                     {
-                        dgvReportes.AutoGenerateColumns = true;
-                        bindingSource.DataSource = gMascota.ConsultarTipoMascota(txtTipoMascota.Text.Trim());
-                        dgvReportes.DataSource = bindingSource;
-                        if (dgvReportes.Rows.Count == 0)
+                        if (gMascota.ListarMascota().Exists(X => X.Tipo == txtTipoMascota.Text.Trim()))
                         {
-                            MessageBox.Show("No hay datos");
+                            dgvReportes.AutoGenerateColumns = true;
+                            bindingSource.DataSource = gMascota.ConsultarTipoMascota(txtTipoMascota.Text.Trim());
+                            dgvReportes.DataSource = bindingSource;
+                            if (dgvReportes.Rows.Count == 0)
+                            {
+                                MessageBox.Show("No hay datos");
+                            }
+                            else
+                            {
+                                lbltipomascota.Text = txtTipoMascota.Text.Trim();
+                                lblcantidad.Text = gMascota.ConsultarTipoMascota(txtTipoMascota.Text.Trim()).Count.ToString();
+                            }
                         }
-                        lbltipomascota.Text = txtTipoMascota.Text.Trim();
-                        lblcantidad.Text = gMascota.ConsultarTipoMascota(txtTipoMascota.Text.Trim()).Count.ToString();
+                        else
+                        {
+                            MessageBox.Show("No se encuentra en la lista este tipo de mascota: " + txtTipoMascota.Text.Trim());
+                        }
                     }
                     else
                     {
@@ -713,18 +723,18 @@ namespace Presentacion
 
                     if (txttipotematica.Text != "")
                     {
-                        dgvReportes.AutoGenerateColumns = true;
-                        bindingSource1.DataSource = gServicio.TipoTematica(txttipotematica.Text.Trim());
-                        dgvReportes.DataSource = bindingSource1;
-                        if (dgvReportes.Rows.Count == 0)
-                        {
-                            MessageBox.Show("No hay datos");
-                        }
-                        else
-                        {
-                            lblcantidadtematica.Text = gServicio.TipoTematica(txttipotematica.Text.Trim()).Rows.Count.ToString();
-                            lbltipohabitacion.Text = txttipotematica.Text.Trim();
-                        }
+                            dgvReportes.AutoGenerateColumns = true;
+                            bindingSource1.DataSource = gServicio.TipoTematica(txttipotematica.Text.Trim());
+                            dgvReportes.DataSource = bindingSource1;
+                            if (dgvReportes.Rows.Count == 0)
+                            {
+                                MessageBox.Show("No hay datos");
+                            }
+                            else
+                            {
+                                lblcantidadtematica.Text = gServicio.TipoTematica(txttipotematica.Text.Trim()).Rows.Count.ToString();
+                                lbltipohabitacion.Text = txttipotematica.Text.Trim();
+                            }
                     }
                     else
                     {
@@ -959,13 +969,13 @@ namespace Presentacion
         {
             if(txtActivoCorrienteESF.Text!=""&&txtActivoNoCorrienteESF.Text!="")
             {
-                txtTotalActivoESF.Text = (Convert.ToDecimal(txtActivoCorrienteESF.Text) + Convert.ToDecimal(txtActivoNoCorrienteESF.Text)).ToString();
+                txtTotalActivoESF.Text = (Convert.ToInt32(Convert.ToDecimal(txtActivoCorrienteESF.Text) + Convert.ToDecimal(txtActivoNoCorrienteESF.Text))).ToString();
             }
 
         }
 
         private void txtPasivoCorrienteESF_KeyUp(object sender, KeyEventArgs e)
-        {
+        {   
             if (txtPasivoNoCorrienteESF.Text != "" && txtPasivoCorrienteESF.Text != "" && txtPatrimonioESF.Text!="")
             {
                 txtTotalPasyPatrESF.Text = (Convert.ToDecimal(txtPasivoCorrienteESF.Text) + Convert.ToDecimal(txtPasivoNoCorrienteESF.Text) + Convert.ToDecimal(txtPatrimonioESF.Text)).ToString();
@@ -992,14 +1002,14 @@ namespace Presentacion
             {
                 if(!dgvESF.SelectedRows[0].IsNewRow)
                 {
-                    txtActivoCorrienteESF.Text = dgvESF.SelectedRows[0].Cells[1].Value.ToString();
-                    txtActivoNoCorrienteESF.Text = dgvESF.SelectedRows[0].Cells[2].Value.ToString();
-                    txtTotalActivoESF.Text = dgvESF.SelectedRows[0].Cells[3].Value.ToString();
-                    txtPasivoCorrienteESF.Text = dgvESF.SelectedRows[0].Cells[4].Value.ToString();
-                    txtPasivoNoCorrienteESF.Text = dgvESF.SelectedRows[0].Cells[5].Value.ToString();
-                    txtPatrimonioESF.Text = dgvESF.SelectedRows[0].Cells[6].Value.ToString();
-                    txtTotalPasyPatrESF.Text = dgvESF.SelectedRows[0].Cells[7].Value.ToString();
-                    txtFechaRegistroESF.Text = dgvESF.SelectedRows[0].Cells[8].Value.ToString();
+                    txtActivoCorrienteESF.Text = Convert.ToInt32(dgvESF.SelectedRows[0].Cells[1].Value).ToString();
+                    txtActivoNoCorrienteESF.Text = Convert.ToInt32(dgvESF.SelectedRows[0].Cells[2].Value).ToString();
+                    txtTotalActivoESF.Text = Convert.ToInt32(dgvESF.SelectedRows[0].Cells[3].Value).ToString();
+                    txtPasivoCorrienteESF.Text = Convert.ToInt32(dgvESF.SelectedRows[0].Cells[4].Value).ToString();
+                    txtPasivoNoCorrienteESF.Text = Convert.ToInt32(dgvESF.SelectedRows[0].Cells[5].Value).ToString();
+                    txtPatrimonioESF.Text = Convert.ToInt32(dgvESF.SelectedRows[0].Cells[6].Value).ToString();
+                    txtTotalPasyPatrESF.Text = Convert.ToInt32(dgvESF.SelectedRows[0].Cells[7].Value).ToString();
+                    txtFechaRegistroESF.Text = Convert.ToDateTime(dgvESF.SelectedRows[0].Cells[8].Value).ToString();
                 }
             }
         }
@@ -1011,14 +1021,14 @@ namespace Presentacion
             {
                 if (!dgvER.SelectedRows[0].IsNewRow)
                 {
-                    txtFechaRegistroER.Text = dgvER.SelectedRows[0].Cells[1].Value.ToString();
-                    txtVentasER.Text = dgvER.SelectedRows[0].Cells[2].Value.ToString();
-                    txtCostoVentasER.Text = dgvER.SelectedRows[0].Cells[3].Value.ToString();
-                    txtUtiBrutaER.Text = dgvER.SelectedRows[0].Cells[4].Value.ToString();
-                    txtOtrosGaeInER.Text = dgvER.SelectedRows[0].Cells[5].Value.ToString();
-                    txtUtiOperativaER.Text = dgvER.SelectedRows[0].Cells[6].Value.ToString();
-                    txtIRER.Text = dgvER.SelectedRows[0].Cells[7].Value.ToString();
-                    txtUtiNetaER.Text = dgvER.SelectedRows[0].Cells[8].Value.ToString();
+                    txtFechaRegistroER.Text = Convert.ToDateTime(dgvER.SelectedRows[0].Cells[8].Value).ToString();
+                    txtVentasER.Text = Convert.ToInt32(dgvER.SelectedRows[0].Cells[1].Value).ToString();
+                    txtCostoVentasER.Text = Convert.ToInt32(dgvER.SelectedRows[0].Cells[2].Value).ToString();
+                    txtUtiBrutaER.Text = Convert.ToInt32(dgvER.SelectedRows[0].Cells[3].Value).ToString();
+                    txtOtrosGaeInER.Text = Convert.ToInt32(dgvER.SelectedRows[0].Cells[4].Value).ToString();
+                    txtUtiOperativaER.Text = Convert.ToInt32(dgvER.SelectedRows[0].Cells[5].Value).ToString();
+                    txtIRER.Text = Convert.ToInt32(dgvER.SelectedRows[0].Cells[6].Value).ToString();
+                    txtUtiNetaER.Text = Convert.ToInt32(dgvER.SelectedRows[0].Cells[7].Value).ToString();
                 }
             }
         }
@@ -1030,11 +1040,11 @@ namespace Presentacion
             {
                 if (!dgvEFE.SelectedRows[0].IsNewRow)
                 {
-                    txtFechaEFE.Text = dgvEFE.SelectedRows[0].Cells[1].Value.ToString();
-                    txtAOperacion.Text = dgvEFE.SelectedRows[0].Cells[2].Value.ToString();
-                    txtAFinanciacion.Text = dgvEFE.SelectedRows[0].Cells[3].Value.ToString();
-                    txtAInversion.Text = dgvEFE.SelectedRows[0].Cells[4].Value.ToString();
-                    txtEfectEquiv.Text = dgvEFE.SelectedRows[0].Cells[5].Value.ToString();
+                    txtFechaEFE.Text = Convert.ToDateTime(dgvEFE.SelectedRows[0].Cells[5].Value).ToString();
+                    txtAOperacion.Text = Convert.ToInt32(dgvEFE.SelectedRows[0].Cells[1].Value).ToString();
+                    txtAFinanciacion.Text = Convert.ToInt32(dgvEFE.SelectedRows[0].Cells[2].Value).ToString();
+                    txtAInversion.Text = Convert.ToInt32(dgvEFE.SelectedRows[0].Cells[3].Value).ToString();
+                    txtEfectEquiv.Text = Convert.ToInt32(dgvEFE.SelectedRows[0].Cells[4].Value).ToString();
                 }
             }
         }
