@@ -15,7 +15,7 @@ namespace Datos
         {
             try
             {
-                string cadenadeconexion = @"Server=DESKTOP-VSJS462\SQLEXPRESS; Initial Catalog=dbHotel; Integrated Security=True";
+                string cadenadeconexion = @"Server=DESKTOP-TJDFLGB; Initial Catalog=dbHotel; Integrated Security=True";
                 conn = new SqlConnection(cadenadeconexion);
 
                 conn.Open();

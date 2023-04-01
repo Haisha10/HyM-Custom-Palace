@@ -43,9 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="nCliente.cs" />
-    <Compile Include="nEFE.cs" />
-    <Compile Include="nER.cs" />
-    <Compile Include="nESF.cs" />
     <Compile Include="nMascota.cs" />
     <Compile Include="nServicio.cs" />
     <Compile Include="nUsuario.cs" />

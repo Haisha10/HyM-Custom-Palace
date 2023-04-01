@@ -25,9 +25,6 @@ namespace Presentacion
         eMascota mascotaseleccionado = null;
         int idMascota;
 
-        nEFE nEFE = new nEFE();
-        nER nER = new nER();
-        nESF nESF = new nESF();
         nServicio gServicio = new nServicio();
 
         private BindingSource bindingSource = new BindingSource();
@@ -49,7 +46,6 @@ namespace Presentacion
             gbtipohabitacion.ForeColor = SystemColors.ControlLightLight;
             gbClientesMascota.ForeColor = SystemColors.ControlLightLight;
             gbFechaFacturacion.ForeColor = SystemColors.ControlLightLight;
-            gbReportesFinancieros.ForeColor = SystemColors.ControlLightLight;
         }
         private void OcultarGroupBoxs()
         {
@@ -59,12 +55,6 @@ namespace Presentacion
             gbClientes.Visible = false;
             gbMascotas.Enabled = false;
             gbMascotas.Visible = false;
-            gbEFE.Enabled = false;
-            gbEFE.Visible = false;
-            gbER.Enabled = false;
-            gbER.Visible = false;
-            gbESF.Enabled = false;
-            gbESF.Visible = false;
             gbReporte.Enabled = false;
             gbReporte.Visible = false;
         }
@@ -313,343 +303,10 @@ namespace Presentacion
             LimpiarControlesMascotas();
             dgMascotas.ForeColor = SystemColors.WindowText;
         }
-
-        private void Mostrar_EFE()
-        {
-            dgvEFE.DataSource = nEFE.Listar_EFE();
-        }
-        private void btnEFE_Click(object sender, EventArgs e)
-        {
-            OcultarGroupBoxs();
-            gbEFE.Enabled = true;
-            gbEFE.Visible = true;
-            Mostrar_EFE();
-            LimpiarControlesEFE();
-            dgvEFE.ForeColor = SystemColors.WindowText;
-        }
-
-        private void btnAgregarEFE_Click(object sender, EventArgs e)
-        {
-            if (txtAFinanciacion.Text != "" && txtAInversion.Text != "" && txtAOperacion.Text != "" && txtEfectEquiv.Text != "" && txtFechaEFE.Text != "")
-            {
-                nEFE.Insertar_EFE(Convert.ToDateTime(txtFechaEFE.Text.Trim()),Convert.ToDecimal(txtAOperacion.Text.Trim()), Convert.ToDecimal(txtAFinanciacion.Text.Trim()), Convert.ToDecimal(txtAInversion.Text.Trim()), Convert.ToDecimal(txtEfectEquiv.Text.Trim()));
-                Mostrar_EFE();
-                LimpiarControlesEFE();
-            }
-            else
-            {
-                MessageBox.Show("Rellene todos los campos.");
-            }
-        }
-
-        private void btnModificarEFE_Click(object sender, EventArgs e)
-        {
-            int cant = dgvEFE.SelectedRows.Count;
-            if (txtAFinanciacion.Text != "" && txtAInversion.Text != "" && txtAOperacion.Text != "" && txtEfectEquiv.Text != "" && txtFechaEFE.Text != "")
-            {
-                if(cant==1)
-                {
-                    if(!dgvEFE.SelectedRows[0].IsNewRow)
-                    {
-                        int codigo = Convert.ToInt32(dgvEFE.SelectedRows[0].Cells[0].Value);
-                        nEFE.Modificar_EFE(codigo, Convert.ToDateTime(txtFechaEFE.Text.Trim()), Convert.ToDecimal(txtAOperacion.Text.Trim()), Convert.ToDecimal(txtAFinanciacion.Text.Trim()), Convert.ToDecimal(txtAInversion.Text.Trim()), Convert.ToDecimal(txtEfectEquiv.Text.Trim()));
-                        Mostrar_EFE();
-                        LimpiarControlesEFE();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Error al modificar.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Rellene todos los campos.");
-            }
-        }
-
-        private void btnEliminarEFE_Click(object sender, EventArgs e)
-        {
-            int cant = dgvEFE.SelectedRows.Count;
-            if(cant==1)
-            {
-                if(!dgvEFE.SelectedRows[0].IsNewRow)
-                {
-                    int codigo = Convert.ToInt32(dgvEFE.SelectedRows[0].Cells[0].Value);
-                    nEFE.Eliminar_EFE(codigo);
-                    Mostrar_EFE();
-                    LimpiarControlesEFE();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Error al modificar.");
-            }
-            
-        }
-
-        private void btnLimpiarEFE_Click(object sender, EventArgs e)
-        {
-            LimpiarControlesEFE();
-        }
-        private void LimpiarControlesEFE()
-        {
-            txtEfectEquiv.Clear();
-            txtFechaEFE.Clear();
-            txtAOperacion.Clear();
-            txtAInversion.Clear();
-            txtAFinanciacion.Clear();
-        }
-
-        private void Mostrar_ER()
-        {
-            dgvER.DataSource = nER.Listar_ER();
-        }
-        private void btnER_Click(object sender, EventArgs e)
-        {
-            OcultarGroupBoxs();
-            gbER.Enabled = true;
-            gbER.Visible = true;
-            Mostrar_ER();
-            LimpiarControlesER();
-            dgvER.ForeColor = SystemColors.WindowText;
-        }
-
-        private void btnAgregarER_Click(object sender, EventArgs e)
-        {
-            if (txtFechaRegistroER.Text != "" && txtIRER.Text != "" && txtOtrosGaeInER.Text != "" && txtCostoVentasER.Text != "" && txtUtiNetaER.Text != "" && txtVentasER.Text != "" && txtUtiBrutaER.Text != "" && txtUtiOperativaER.Text != "")
-            {
-                nER.Insertar_ER(Convert.ToDateTime(txtFechaRegistroER.Text.Trim()), Convert.ToDecimal(txtVentasER.Text.Trim()), Convert.ToDecimal(txtCostoVentasER.Text.Trim()), Convert.ToDecimal(txtUtiBrutaER.Text.Trim()), Convert.ToDecimal(txtOtrosGaeInER.Text.Trim()), Convert.ToDecimal(txtUtiOperativaER.Text.Trim()), Convert.ToDecimal(txtIRER.Text), Convert.ToDecimal(txtUtiNetaER.Text.Trim()));
-                Mostrar_ER();
-                LimpiarControlesER();
-            }
-            else
-            {
-                MessageBox.Show("Rellene todos los campos.");
-            }
-        }
-
-        private void btnModificarER_Click(object sender, EventArgs e)
-        {
-            int cant = dgvER.SelectedRows.Count;
-            if (txtFechaRegistroER.Text != "" && txtIRER.Text != "" && txtOtrosGaeInER.Text != "" && txtCostoVentasER.Text != "" && txtUtiNetaER.Text != "" && txtVentasER.Text != "" && txtUtiBrutaER.Text != "" && txtUtiOperativaER.Text != "")
-            {
-                if (cant == 1)
-                {
-                    if (!dgvER.SelectedRows[0].IsNewRow)
-                    {
-                        int codigo = Convert.ToInt32(dgvER.SelectedRows[0].Cells[0].Value);
-                        nER.Modificar_ER(codigo, Convert.ToDateTime(txtFechaRegistroER.Text.Trim()), Convert.ToDecimal(txtVentasER.Text.Trim()), Convert.ToDecimal(txtCostoVentasER.Text.Trim()), Convert.ToDecimal(txtUtiBrutaER.Text.Trim()), Convert.ToDecimal(txtOtrosGaeInER.Text.Trim()), Convert.ToDecimal(txtUtiOperativaER.Text.Trim()), Convert.ToDecimal(txtIRER.Text), Convert.ToDecimal(txtUtiNetaER.Text.Trim()));
-                        Mostrar_ER();
-                        LimpiarControlesER();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Error al modificar.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Rellene todos los campos.");
-            }
-        }
-
-        private void btnEliminarER_Click(object sender, EventArgs e)
-        {
-            int cant = dgvER.SelectedRows.Count;
-            if (cant == 1)
-            {
-                if (!dgvER.SelectedRows[0].IsNewRow)
-                {
-                    int codigo = Convert.ToInt32(dgvER.SelectedRows[0].Cells[0].Value);
-                    nER.Eliminar_ER(codigo);
-                    Mostrar_ER();
-                    LimpiarControlesER();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Error al modificar.");
-            }
-        }
-
-        private void btnLimpiarER_Click(object sender, EventArgs e)
-        {
-            LimpiarControlesER();
-        }
-        private void LimpiarControlesER()
-        {
-            txtFechaRegistroER.Clear();
-            txtIRER.Clear();
-            txtCostoVentasER.Clear();
-            txtUtiBrutaER.Clear();
-            txtUtiOperativaER.Clear();
-            txtUtiNetaER.Clear();
-            txtUtiOperativaER.Clear();
-            txtVentasER.Clear();
-            txtOtrosGaeInER.Clear();
-        }
-
-        private void btnESF_Click(object sender, EventArgs e)
-        {
-            OcultarGroupBoxs();
-            gbESF.Enabled = true;
-            gbESF.Visible = true;
-            Mostrar_ESF();
-            LimpiarControlesESF();
-            dgvESF.ForeColor = SystemColors.WindowText;
-        }
-        private void Mostrar_ESF()
-        {
-            dgvESF.DataSource = nESF.Listar_ESF();
-        }
-
-        private void btnAgregarESF_Click(object sender, EventArgs e)
-        {
-            if (txtFechaRegistroESF.Text != "" && txtActivoCorrienteESF.Text != "" && txtActivoNoCorrienteESF.Text != "" && txtPasivoCorrienteESF.Text != "" && txtPasivoNoCorrienteESF.Text != "" && txtPatrimonioESF.Text != "" && txtTotalActivoESF.Text != "" && txtTotalPasyPatrESF.Text != "")
-            {
-                nESF.Insertar_ESF(Convert.ToDateTime(txtFechaRegistroESF.Text), Convert.ToDecimal(txtActivoCorrienteESF.Text), Convert.ToDecimal(txtActivoNoCorrienteESF.Text), Convert.ToDecimal(txtTotalActivoESF.Text), Convert.ToDecimal(txtPasivoCorrienteESF.Text), Convert.ToDecimal(txtPasivoNoCorrienteESF.Text), Convert.ToDecimal(txtPatrimonioESF.Text), Convert.ToDecimal(txtTotalPasyPatrESF.Text));
-                Mostrar_ESF();
-                LimpiarControlesESF();
-            }
-            else
-            {
-                MessageBox.Show("Rellene todos los campos.");
-            }
-        }
-
-        private void btnModificarESF_Click(object sender, EventArgs e)
-        {
-            int cant = dgvESF.SelectedRows.Count;
-            if (txtFechaRegistroESF.Text != "" && txtActivoCorrienteESF.Text != "" && txtActivoNoCorrienteESF.Text != "" && txtPasivoCorrienteESF.Text != "" && txtPasivoNoCorrienteESF.Text != "" && txtPatrimonioESF.Text != "" && txtTotalActivoESF.Text != "" && txtTotalPasyPatrESF.Text != "")
-            {
-                if (cant == 1)
-                {
-                    if (!dgvESF.SelectedRows[0].IsNewRow)
-                    {
-                        int codigo = Convert.ToInt32(dgvESF.SelectedRows[0].Cells[0].Value);
-                        nESF.Modificar_ESF(codigo, Convert.ToDateTime(txtFechaRegistroESF.Text.Trim()), Convert.ToDecimal(txtActivoCorrienteESF.Text.Trim()), Convert.ToDecimal(txtActivoNoCorrienteESF.Text.Trim()), Convert.ToDecimal(txtTotalActivoESF.Text.Trim()), Convert.ToDecimal(txtPasivoCorrienteESF.Text.Trim()), Convert.ToDecimal(txtPasivoNoCorrienteESF.Text.Trim()), Convert.ToDecimal(txtPatrimonioESF.Text.Trim()), Convert.ToDecimal(txtTotalPasyPatrESF.Text.Trim()));
-                        Mostrar_ESF();
-                        LimpiarControlesESF();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Error al modificar.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Rellene todos los campos.");
-            }
-        }
-
-        private void btnELiminarESF_Click(object sender, EventArgs e)
-        {
-            int cant = dgvESF.SelectedRows.Count;
-            if (cant == 1)
-            {
-                if (!dgvESF.SelectedRows[0].IsNewRow)
-                {
-                    int codigo = Convert.ToInt32(dgvESF.SelectedRows[0].Cells[0].Value);
-                    nESF.Eliminar_ESF(codigo);
-                    Mostrar_ESF();
-                    LimpiarControlesESF();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Error al modificar.");
-            }
-        }
-
-        private void btnLimpiarESF_Click(object sender, EventArgs e)
-        {
-            LimpiarControlesESF();
-        }
-        private void LimpiarControlesESF()
-        {
-            txtActivoCorrienteESF.Clear();
-            txtActivoNoCorrienteESF.Clear();
-            txtTotalActivoESF.Clear();
-            txtFechaRegistroESF.Clear();
-            txtPasivoCorrienteESF.Clear();
-            txtPasivoNoCorrienteESF.Clear();
-            txtPatrimonioESF.Clear();
-            txtTotalPasyPatrESF.Clear();
-        }
-
         private void Administrador_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void gbER_Enter(object sender, EventArgs e)
-        {
-            
-        }
-
-
-        private void txtUtiBrutaER_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar < 48 || e.KeyChar > 57)
-            {
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtUtiOperativaER_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar < 48 || e.KeyChar > 57)
-            {
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtUtiNetaER_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar < 48 || e.KeyChar > 57)
-            {
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtOtrosGaeInER_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 65 && e.KeyChar <= 90)||(e.KeyChar >= 97 && e.KeyChar <= 122)) 
-            {
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtIRER_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar < 48 || e.KeyChar > 57)
-            {
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtUtiBrutaER_TextChanged(object sender, EventArgs e)
-        {
-            if (txtVentasER.Text != "" && txtCostoVentasER.Text != "")
-            {
-                txtUtiBrutaER.Text = (Convert.ToInt32(txtVentasER.Text) - Convert.ToInt32(txtCostoVentasER.Text)).ToString();
-            }
-        }
-
-        private void txtVentasER_KeyUp(object sender, KeyEventArgs e)
-        {
-            if(txtCostoVentasER.Text!=""&&txtVentasER.Text!="")
-                txtUtiBrutaER.Text = (Convert.ToInt32(txtVentasER.Text) - Convert.ToInt32(txtCostoVentasER.Text)).ToString();
-        }
-
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
@@ -674,8 +331,6 @@ namespace Presentacion
             gbClientesMascota.Visible = false;
             gbFechaFacturacion.Enabled = false;
             gbFechaFacturacion.Visible = false;
-            gbReportesFinancieros.Enabled = false;
-            gbReportesFinancieros.Visible = false;
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -723,18 +378,18 @@ namespace Presentacion
 
                     if (txttipotematica.Text != "")
                     {
-                            dgvReportes.AutoGenerateColumns = true;
-                            bindingSource1.DataSource = gServicio.TipoTematica(txttipotematica.Text.Trim());
-                            dgvReportes.DataSource = bindingSource1;
-                            if (dgvReportes.Rows.Count == 0)
-                            {
-                                MessageBox.Show("No hay datos");
-                            }
-                            else
-                            {
-                                lblcantidadtematica.Text = gServicio.TipoTematica(txttipotematica.Text.Trim()).Rows.Count.ToString();
-                                lbltipohabitacion.Text = txttipotematica.Text.Trim();
-                            }
+                        dgvReportes.AutoGenerateColumns = true;
+                        bindingSource1.DataSource = gServicio.TipoTematica(txttipotematica.Text.Trim());
+                        dgvReportes.DataSource = bindingSource1;
+                        if (dgvReportes.Rows.Count == 0)
+                        {
+                            MessageBox.Show("No hay datos");
+                        }
+                        else
+                        {
+                            lblcantidadtematica.Text = gServicio.TipoTematica(txttipotematica.Text.Trim()).Rows.Count.ToString();
+                            lbltipohabitacion.Text = txttipotematica.Text.Trim();
+                        }
                     }
                     else
                     {
@@ -747,7 +402,7 @@ namespace Presentacion
                     gbIntervalofecha.Enabled = true;
                     gbIntervalofecha.Visible = true;
 
-                    if(txtfecha1.Text!=""&&txtfecha2.Text!="")
+                    if (txtfecha1.Text != "" && txtfecha2.Text != "")
                     {
                         dgvReportes.AutoGenerateColumns = true;
                         bindingSource2.DataSource = gServicio.IntervaloFecha(Convert.ToDateTime(txtfecha1.Text.Trim()), Convert.ToDateTime(txtfecha2.Text.Trim()));
@@ -826,44 +481,6 @@ namespace Presentacion
                     else
                         MessageBox.Show("¡Rellene las fechas!");
                 }
-                else if (cmbtiporeporte.SelectedItem.ToString() == "E.E.F.F.")
-                {
-                    OcultarReportes();
-                    gbReportesFinancieros.Enabled = true;
-                    gbReportesFinancieros.Visible = true;
-
-                    if (cmbEEFF.SelectedItem != null)
-                    {
-                        if (txtFecha1EEFF.Text != "" && txtFecha2EEFF.Text != "")
-                        {
-                            DateTime fecha1 = Convert.ToDateTime(txtFecha1EEFF.Text);
-                            DateTime fecha2 = Convert.ToDateTime(txtFecha2EEFF.Text);
-                            if (cmbEEFF.SelectedItem.ToString() == "E.F.E.")
-                            {
-                                dgvReportes.DataSource = nEFE.MostrarxFechaEFE(fecha1, fecha2);
-                            }
-                            else if (cmbEEFF.SelectedItem.ToString() == "E.R.")
-                            {
-                                dgvReportes.DataSource = nER.MostrarxFechaER(fecha1, fecha2);
-                            }
-                            else if (cmbEEFF.SelectedItem.ToString() == "E.S.F.")
-                            {
-                                dgvReportes.DataSource = nESF.MostrarxFechaESF(fecha1, fecha2);
-                            }
-                            cmbEEFF.SelectedIndex = -1;
-                            txtFecha1EEFF.Clear();
-                            txtFecha2EEFF.Clear();
-                        }
-                        else
-                        {
-                            MessageBox.Show("¡Digite las fechas!");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("¡Seleccione un reporte!");
-                    }
-                }
             }
             else
             {
@@ -917,136 +534,10 @@ namespace Presentacion
                 gbFechaFacturacion.Visible = true;
                 dgvReportes.DataSource = "";
             }
-            else if (cmbtiporeporte.SelectedItem.ToString() == "E.E.F.F.")
-            {
-                OcultarReportes();
-                gbReportesFinancieros.Enabled = true;
-                gbReportesFinancieros.Visible = true;
-                dgvReportes.DataSource = "";
-            }
         }
-
-        private void txtUtiOperativaER_TextChanged(object sender, EventArgs e)
-        {
-            if (txtUtiBrutaER.Text != "" && txtOtrosGaeInER.Text != "")
-            {
-                txtUtiOperativaER.Text = (Convert.ToInt32(txtUtiBrutaER.Text) - Convert.ToInt32(txtOtrosGaeInER.Text)).ToString();
-            }
-        }
-
-        private void txtOtrosGaeInER_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (txtUtiBrutaER.Text != "" && txtOtrosGaeInER.Text != "")
-            {
-
-                  txtUtiOperativaER.Text = (Convert.ToDecimal(txtUtiBrutaER.Text) - Convert.ToDecimal(txtOtrosGaeInER.Text)).ToString();
-  
-            }
-            if (txtUtiOperativaER.Text != "")
-            {
-                txtIRER.Text = (Convert.ToInt32(txtUtiOperativaER.Text) * 0.295).ToString();
-            }
-            if (txtIRER.Text != "")
-            {
-                txtUtiNetaER.Text = (Convert.ToDecimal(txtUtiOperativaER.Text) -Convert.ToDecimal(Math.Round(Convert.ToDouble(txtIRER.Text),MidpointRounding.AwayFromZero))).ToString();
-            }
-        }
-
-        private void txtOtrosGaeInER_KeyPress(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCostoVentasER_KeyUp(object sender, KeyEventArgs e)
-        {
-            if(txtCostoVentasER.Text!=""&&txtVentasER.Text!="")
-            {
-                txtUtiBrutaER.Text = (Convert.ToDecimal(txtVentasER.Text) - Convert.ToDecimal(txtCostoVentasER.Text)).ToString();
-            }
-        }
-
-        private void txtActivoNoCorrienteESF_KeyUp(object sender, KeyEventArgs e)
-        {
-            if(txtActivoCorrienteESF.Text!=""&&txtActivoNoCorrienteESF.Text!="")
-            {
-                txtTotalActivoESF.Text = (Convert.ToInt32(Convert.ToDecimal(txtActivoCorrienteESF.Text) + Convert.ToDecimal(txtActivoNoCorrienteESF.Text))).ToString();
-            }
-
-        }
-
-        private void txtPasivoCorrienteESF_KeyUp(object sender, KeyEventArgs e)
-        {   
-            if (txtPasivoNoCorrienteESF.Text != "" && txtPasivoCorrienteESF.Text != "" && txtPatrimonioESF.Text!="")
-            {
-                txtTotalPasyPatrESF.Text = (Convert.ToDecimal(txtPasivoCorrienteESF.Text) + Convert.ToDecimal(txtPasivoNoCorrienteESF.Text) + Convert.ToDecimal(txtPatrimonioESF.Text)).ToString();
-            }
-        }
-
-        private void txtAOperacion_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (txtAInversion.Text != "" && txtAFinanciacion.Text != "" && txtAOperacion.Text !="")
-            {
-                txtEfectEquiv.Text = (Convert.ToDecimal(txtAFinanciacion.Text)- Convert.ToDecimal(txtAInversion.Text) + Convert.ToDecimal(txtAOperacion.Text)).ToString();
-            }
-        }
-
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void dgvESF_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int cant = dgvESF.SelectedRows.Count;
-            if (cant == 1) 
-            {
-                if(!dgvESF.SelectedRows[0].IsNewRow)
-                {
-                    txtActivoCorrienteESF.Text = Convert.ToInt32(dgvESF.SelectedRows[0].Cells[1].Value).ToString();
-                    txtActivoNoCorrienteESF.Text = Convert.ToInt32(dgvESF.SelectedRows[0].Cells[2].Value).ToString();
-                    txtTotalActivoESF.Text = Convert.ToInt32(dgvESF.SelectedRows[0].Cells[3].Value).ToString();
-                    txtPasivoCorrienteESF.Text = Convert.ToInt32(dgvESF.SelectedRows[0].Cells[4].Value).ToString();
-                    txtPasivoNoCorrienteESF.Text = Convert.ToInt32(dgvESF.SelectedRows[0].Cells[5].Value).ToString();
-                    txtPatrimonioESF.Text = Convert.ToInt32(dgvESF.SelectedRows[0].Cells[6].Value).ToString();
-                    txtTotalPasyPatrESF.Text = Convert.ToInt32(dgvESF.SelectedRows[0].Cells[7].Value).ToString();
-                    txtFechaRegistroESF.Text = Convert.ToDateTime(dgvESF.SelectedRows[0].Cells[8].Value).ToString();
-                }
-            }
-        }
-
-        private void dgvER_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int cant = dgvER.SelectedRows.Count;
-            if (cant == 1)
-            {
-                if (!dgvER.SelectedRows[0].IsNewRow)
-                {
-                    txtFechaRegistroER.Text = Convert.ToDateTime(dgvER.SelectedRows[0].Cells[8].Value).ToString();
-                    txtVentasER.Text = Convert.ToInt32(dgvER.SelectedRows[0].Cells[1].Value).ToString();
-                    txtCostoVentasER.Text = Convert.ToInt32(dgvER.SelectedRows[0].Cells[2].Value).ToString();
-                    txtUtiBrutaER.Text = Convert.ToInt32(dgvER.SelectedRows[0].Cells[3].Value).ToString();
-                    txtOtrosGaeInER.Text = Convert.ToInt32(dgvER.SelectedRows[0].Cells[4].Value).ToString();
-                    txtUtiOperativaER.Text = Convert.ToInt32(dgvER.SelectedRows[0].Cells[5].Value).ToString();
-                    txtIRER.Text = Convert.ToInt32(dgvER.SelectedRows[0].Cells[6].Value).ToString();
-                    txtUtiNetaER.Text = Convert.ToInt32(dgvER.SelectedRows[0].Cells[7].Value).ToString();
-                }
-            }
-        }
-
-        private void dgvEFE_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int cant = dgvEFE.SelectedRows.Count;
-            if (cant == 1)
-            {
-                if (!dgvEFE.SelectedRows[0].IsNewRow)
-                {
-                    txtFechaEFE.Text = Convert.ToDateTime(dgvEFE.SelectedRows[0].Cells[5].Value).ToString();
-                    txtAOperacion.Text = Convert.ToInt32(dgvEFE.SelectedRows[0].Cells[1].Value).ToString();
-                    txtAFinanciacion.Text = Convert.ToInt32(dgvEFE.SelectedRows[0].Cells[2].Value).ToString();
-                    txtAInversion.Text = Convert.ToInt32(dgvEFE.SelectedRows[0].Cells[3].Value).ToString();
-                    txtEfectEquiv.Text = Convert.ToInt32(dgvEFE.SelectedRows[0].Cells[4].Value).ToString();
-                }
-            }
         }
     }
 }

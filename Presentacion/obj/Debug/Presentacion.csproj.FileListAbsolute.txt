@@ -186,3 +186,25 @@ C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Pala
 C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
 C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\obj\Debug\HyP Custom Palace.exe
 C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Presentacion\obj\Debug\HyP Custom Palace.pdb
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\bin\Debug\HyP Custom Palace.exe.config
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\bin\Debug\HyP Custom Palace.exe
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\bin\Debug\HyP Custom Palace.pdb
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\bin\Debug\Entidades.dll
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\bin\Debug\Negocio.dll
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\bin\Debug\Datos.dll
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\bin\Debug\Entidades.pdb
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\bin\Debug\Negocio.pdb
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\bin\Debug\Datos.pdb
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.csproj.SuggestedBindingRedirects.cache
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.Administrador.resources
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.Facturacion.resources
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.Huesped.resources
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.Login.resources
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\HyP_Custom_Palace.Properties.Resources.resources
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.Recuperacion.resources
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\HyP Custom Palace.exe
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Presentacion\obj\Debug\HyP Custom Palace.pdb

@@ -44,9 +44,6 @@
   <ItemGroup>
     <Compile Include="Database.cs" />
     <Compile Include="dCliente.cs" />
-    <Compile Include="dEFE.cs" />
-    <Compile Include="dER.cs" />
-    <Compile Include="dESF.cs" />
     <Compile Include="dMascota.cs" />
     <Compile Include="dServicio.cs" />
     <Compile Include="dUsuario.cs" />

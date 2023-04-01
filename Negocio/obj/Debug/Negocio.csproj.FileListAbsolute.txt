@@ -86,3 +86,14 @@ C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Pala
 C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.dll
 C:\Users\HP\Documents\Fundamentos de sistemas de información\TF\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.pdb
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Negocio\bin\Debug\Negocio.dll
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Negocio\bin\Debug\Negocio.pdb
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Negocio\bin\Debug\Datos.dll
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Negocio\bin\Debug\Entidades.dll
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Negocio\bin\Debug\Datos.pdb
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Negocio\bin\Debug\Entidades.pdb
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.dll
+C:\Users\alvar\source\repos\HyM-Custom-Palace\Negocio\obj\Debug\Negocio.pdb
