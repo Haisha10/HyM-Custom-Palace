@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 using Entidades;
 using Negocio;
 
@@ -119,6 +120,34 @@ namespace Presentacion
 
         private void btnHuespedRegistrar_Click(object sender, EventArgs e)
         {
+            if(!Regex.IsMatch(tbxClienteNombre.Text, "^[a-zA-Z]{2,20}$"))
+            {
+                MessageBox.Show("Nombre de Cliente invalido. Ingrese letras de 2 a 20 carácteres, sin números ni símbolos.");
+                return;
+            }
+            if (!Regex.IsMatch(tbxClienteApellido.Text, "^[a-zA-Z]{2,20}$"))
+            {
+                MessageBox.Show("Apellido de Cliente invalido. Ingrese letras de 2 a 20 carácteres, sin números ni símbolos.");
+                return;
+            }
+            if (!(Regex.IsMatch(tbxClienteDni.Text, "^[0-9]{8}$") && 
+                int.TryParse(tbxClienteDni.Text, out int dni) && 
+                dni >= 1 && dni <= 99999999))
+            {
+                MessageBox.Show("DNI de Cliente invalido. Ingrese un número de 8 dígitos, que empiece con 'ceros' de ser necesario.");
+                return;
+            }
+            if (!(Regex.IsMatch(tbxClienteTelefono.Text, "^9[0-9]{8}$") && 
+                int.TryParse(tbxClienteTelefono.Text, out int telefono) && 
+                telefono >= 900000000 && telefono <= 999999999))
+            {
+                MessageBox.Show("Telefono de Cliente invalido. Ingrese un número de 9 dígitos, que empiece con nueve.");
+                return;
+            }
+            if (!Regex.IsMatch(tbxClienteCorreo.Text, @"^[a-zA-Z0-9._%+-]{2,20}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+            {
+                MessageBox.Show("Correo de Cliente invalido. Ingrese un correo de entre 2 y 20 caracteres.");
+            }
             int? id_mascota;
             string tipo;
             if(tbxClienteNombre.Text != "" && tbxClienteApellido.Text != "" && tbxClienteDni.Text != "" && tbxClienteTelefono.Text != "" && tbxClienteCorreo.Text != "" &&
