@@ -36,9 +36,11 @@ namespace Presentacion
             tbxClienteDni.MaxLength = 8;
             tbxClienteTelefono.MaxLength = 9;
             gbMascota.Enabled = false;
+            rbnServicioTipoClasico.Enabled = true;
             nombreRecepcionista = nombre;
             LimpiarControles(); ;
             MostrarVentas();
+            tbxServicioTematica.Text = "Clasico";
         }
         private void MostrarVentas()
         {
