@@ -147,6 +147,37 @@ namespace Presentacion
             if (!Regex.IsMatch(tbxClienteCorreo.Text, @"^[a-zA-Z0-9._%+-]{2,20}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
             {
                 MessageBox.Show("Correo de Cliente invalido. Ingrese un correo de entre 2 y 20 caracteres.");
+                return;
+            }
+            if (!Regex.IsMatch(tbxServicioIngreso.Text, @"^(0[1-9]|1\d|2\d|3[01])[-/](0[1-9]|1[0-2])[-/](\d{4})$"))
+            {
+                MessageBox.Show("Fecha de Ingreso invalida. Ingrese una fecha con el formato dd/MM/aaaa.");
+                return;
+            }
+            if (!Regex.IsMatch(tbxServicioSalida.Text, @"^(0[1-9]|1\d|2\d|3[01])[-/](0[1-9]|1[0-2])[-/](\d{4})$"))
+            {
+                MessageBox.Show("Fecha de Ingreso invalida. Ingrese una fecha con el formato dd/MM/aaaa.");
+                return;
+            }
+            if (tbxServicioTematica.Text.Length < 3 || tbxServicioTematica.Text.Length < 30)
+            {
+                MessageBox.Show("Temática invalida. Ingrese una temática de entre 3 y 30 caracteres.");
+                return;
+            }
+            if (Regex.IsMatch(tbxServicioNumero.Text, @"^(0[0-9]|1[0-2]|2[0-1]|3[0-1][0-2])$"))
+            {
+                MessageBox.Show("Numero de Habitación invalido. Ingrese una habitación válida.");
+                return;
+            }
+            if (!(tbxMascotaEdad.Text.Length <= 3 && int.TryParse(tbxMascotaEdad.Text, out int months) && months >= 1 && months <= 240))
+            {
+                MessageBox.Show("Edad de mascota invalida. Ingrese una edad de entre 1 y 240 meses.");
+                return;
+            }
+            if (Regex.IsMatch(tbxMascotaNombre.Text, @"^[a-zA-Z]{2,30}$"))
+            {
+                MessageBox.Show("Nombre de mascota invalido. Ingrese una nombre de entre 2 y 30 caracteres.");
+                return;
             }
             int? id_mascota;
             string tipo;

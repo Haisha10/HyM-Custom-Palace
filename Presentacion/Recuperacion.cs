@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
@@ -24,8 +25,22 @@ namespace Presentacion
 
         private void btnReestablecerContrasena_Click(object sender, EventArgs e)
         {
+            if (!(Regex.IsMatch(tbxTelefono.Text, "^9[0-9]{8}$") &&
+                int.TryParse(tbxTelefono.Text, out int telefono) &&
+                telefono >= 900000000 && telefono <= 999999999))
+            {
+                MessageBox.Show("Telefono de Cliente invalido. Ingrese un número de 9 dígitos, que empiece con nueve.");
+                return;
+            }
+            if (!(Regex.IsMatch(tbxDni.Text, "^[0-9]{8}$") &&
+                int.TryParse(tbxDni.Text, out int dni) &&
+                dni >= 1 && dni <= 99999999))
+            {
+                MessageBox.Show("DNI de Cliente invalido. Ingrese un número de 8 dígitos, que empiece con 'ceros' de ser necesario.");
+                return;
+            }
             //Textboxs rellenados
-            if(tbxUsuario.Text != "" && tbxContrasena.Text != "" && tbxContraseñaConfirmar.Text != "" && tbxDni.Text != "" && tbxCorreo.Text != "" && tbxTelefono.Text != "")
+            if (tbxUsuario.Text != "" && tbxContrasena.Text != "" && tbxContraseñaConfirmar.Text != "" && tbxDni.Text != "" && tbxCorreo.Text != "" && tbxTelefono.Text != "")
             {
                 if(tbxContrasena.Text == tbxContraseñaConfirmar.Text) //Contraseñas iguales
                 {
